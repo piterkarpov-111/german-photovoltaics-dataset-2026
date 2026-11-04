@@ -1,0 +1,17 @@
+code,bundesland,slug,hauptstadt,globalstrahlung_kwh_m2,spezifischer_ertrag_kwh_kwp,sonnenstunden_jahr,optimaler_neigungswinkel_grad,strompreis_ct_kwh,kosten_pro_kwp_eur,komplettpreis_10kwp_speicher_eur,amortisation_jahre,20_jahre_nettovorteil_eur,sme_2026_score,solarpflicht_neubau_wohngebaeude,solarpflicht_dachsanierung_bestand,url
+BW,"Baden-Württemberg",baden-wuerttemberg,"Stuttgart",1175,1070,1790,33,37.2,1310,18600,8.4,26900,94,true,true,https://solarmetrik.de/solaratlas/baden-wuerttemberg
+BY,"Bayern",bayern,"München",1185,1085,1815,34,36.9,1320,18800,8.3,27400,95,false,false,https://solarmetrik.de/solaratlas/bayern
+BE,"Berlin",berlin,"Berlin",1065,965,1690,37,38.4,1350,19100,8.6,24800,91,true,true,https://solarmetrik.de/solaratlas/berlin
+BB,"Brandenburg",brandenburg,"Potsdam",1075,975,1710,37,37.9,1260,17900,8.9,23600,87,false,false,https://solarmetrik.de/solaratlas/brandenburg
+HB,"Bremen",bremen,"Bremen",1015,925,1560,38,37.1,1290,18200,9.4,21200,83,true,true,https://solarmetrik.de/solaratlas/bremen
+HH,"Hamburg",hamburg,"Hamburg",1020,930,1580,38,38.1,1360,19200,9.5,21900,85,true,true,https://solarmetrik.de/solaratlas/hamburg
+HE,"Hessen",hessen,"Wiesbaden",1105,1005,1680,35,37,1300,18500,8.7,24500,90,false,false,https://solarmetrik.de/solaratlas/hessen
+MV,"Mecklenburg-Vorpommern",mecklenburg-vorpommern,"Schwerin",1070,980,1765,38,38.6,1240,17600,8.6,24400,88,false,false,https://solarmetrik.de/solaratlas/mecklenburg-vorpommern
+NI,"Niedersachsen",niedersachsen,"Hannover",1035,945,1595,37,36.8,1265,17950,9.1,22300,85,true,false,https://solarmetrik.de/solaratlas/niedersachsen
+NW,"Nordrhein-Westfalen",nordrhein-westfalen,"Düsseldorf",1060,965,1615,36,37.4,1275,18100,8.8,23800,89,true,true,https://solarmetrik.de/solaratlas/nordrhein-westfalen
+RP,"Rheinland-Pfalz",rheinland-pfalz,"Mainz",1135,1030,1730,35,37.1,1285,18250,8.5,25600,91,false,false,https://solarmetrik.de/solaratlas/rheinland-pfalz
+SL,"Saarland",saarland,"Saarbrücken",1140,1035,1740,35,37.6,1295,18350,8.5,25900,91,false,false,https://solarmetrik.de/solaratlas/saarland
+SN,"Sachsen",sachsen,"Dresden",1090,990,1695,36,37.3,1235,17550,8.6,24300,89,false,false,https://solarmetrik.de/solaratlas/sachsen
+ST,"Sachsen-Anhalt",sachsen-anhalt,"Magdeburg",1075,975,1675,36,37.7,1225,17400,8.7,23900,88,false,false,https://solarmetrik.de/solaratlas/sachsen-anhalt
+SH,"Schleswig-Holstein",schleswig-holstein,"Kiel",1030,945,1650,38,38.5,1280,18100,8.9,23100,86,false,false,https://solarmetrik.de/solaratlas/schleswig-holstein
+TH,"Thüringen",thueringen,"Erfurt",1080,980,1665,36,37.5,1230,17500,8.6,24100,88,false,false,https://solarmetrik.de/solaratlas/thueringen
