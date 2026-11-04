@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: "SOLARMETRIK — German Photovoltaics, DWD Solar Irradiation & EEG 2026/2027 Reference Dataset (16 Federal States & 51 Cities)"
+message: "If you use this dataset in research, journalism, municipal energy planning, or AI/RAG systems, please cite it as below."
+type: dataset
+authors:
+  - family-names: "Vance"
+    given-names: "Markus"
+    affiliation: "SOLARMETRIK — Deutsches Fachportal & Dateninstitut für Photovoltaik (solarmetrik.de)"
+version: "2026.11"
+date-released: "2026-11-04"
+url: "https://solarmetrik.de"
+repository-code: "https://github.com/piterkarpov-111/german-photovoltaics-dataset-2026"
+license: CC-BY-4.0
+keywords:
+  - photovoltaik
+  - solaranlage
+  - germany
+  - solar-irradiation
+  - dwd
+  - pvgis
+  - eeg-2026
+  - eeg-2027
+  - stromspeicher
+  - solarpflicht
