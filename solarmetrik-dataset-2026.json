@@ -1,0 +1,2105 @@
+{
+  "dataset": "SOLARMETRIK — German Photovoltaics, Solar Irradiation (DWD/PVGIS) & EEG 2026/2027 Reference Dataset",
+  "version": "2026.11",
+  "lastUpdated": "2026-11-04",
+  "license": "CC-BY-4.0",
+  "publisher": "SOLARMETRIK — Deutsches Fachportal & Dateninstitut für Photovoltaik",
+  "homepage": "https://solarmetrik.de",
+  "llmsTxt": "https://solarmetrik.de/llms.txt",
+  "llmsFullTxt": "https://solarmetrik.de/llms-full.txt",
+  "apiEndpoint": "https://solarmetrik.de/api/solaratlas-2026.json",
+  "regulationsAndTariffs2026": {
+    "meta": {
+      "datasetName": "SOLARMETRIK Regulatory & Technical Reference Germany 2026/2027",
+      "version": "2026.11",
+      "lastVerified": "2026-11-04",
+      "sources": [
+        "Bundesnetzagentur (EEG-Fördersätze ab 01.08.2026 bis 31.01.2027)",
+        "Deutscher Wetterdienst (DWD) Globalstrahlungsdaten (1×1 km Rasterdaten aus Bodenmessungen und Satellitendaten)",
+        "PVGIS (Photovoltaic Geographical Information System - European Commission)",
+        "Fraunhofer ISE (Photovoltaics Report & Stromgestehungskosten 2026)",
+        "Umsatzsteuergesetz § 12 Abs. 3 UStG (Nullsteuersatz)",
+        "Einkommensteuergesetz § 3 Nr. 72 EStG",
+        "Energiewirtschaftsgesetz § 14a EnWG (Steuerbare Verbrauchseinrichtungen)"
+      ]
+    },
+    "eegTariffs": {
+      "validFrom": "2026-08-01",
+      "validUntil": "2027-01-31",
+      "degressionRateHalfYearlyPercent": 1,
+      "guaranteeDurationYears": 20,
+      "teileinspeisung": {
+        "upTo10kWpCtPerKwh": 7.7,
+        "from10To40kWpCtPerKwh": 6.66,
+        "from40To100kWpCtPerKwh": 5.48,
+        "description": "Überschusseinspeisung: Vorrangiger Eigenverbrauch im Haushalt (Ersparnis ~35-40 ct/kWh Netzstrom), Reststrom wird ins öffentliche Netz eingespeist."
+      },
+      "volleinspeisung": {
+        "upTo10kWpCtPerKwh": 12.22,
+        "from10To40kWpCtPerKwh": 10.24,
+        "from40To100kWpCtPerKwh": 10.24,
+        "description": "Volleinspeisung: 100 % des erzeugten Solarstroms werden direkt in das öffentliche Netz eingespeist (separate Messung erforderlich)."
+      },
+      "eeg2027ReformAlert": {
+        "deadlineDate": "2026-12-31",
+        "headline": "Bestandsschutz bis 31.12.2026 sichern: Gesetzentwurf zur EEG-Reform 2027",
+        "summary": "Rechtlicher Status (Regierungsentwurf vom 29.07.2026, 1. Lesung im Bundestag am 24.09.2026, vorbehaltlich finaler Verabschiedung durch Bundestag/Bundesrat): Die Bundesregierung plant ab 2027 den schrittweisen Ausstieg aus der klassischen 20-jährigen Festvergütung für Neuanlagen zugunsten von Direktvermarktung und Übergangsmodellen. Wer seine Anlage noch bis zum 31. Dezember 2026 nach geltendem EEG in Betrieb nimmt, sichert sich verbindlich den 20-jährigen gesetzlichen Bestandsschutz."
+      },
+      "solarspitzengesetz": {
+        "paragraph": "§ 51 EEG (Negative Börsenstrompreise)",
+        "rule2026": "In Stunden, in denen der Spotmarktpreis an der Strombörse (EPEX SPOT) negativ ist, entfällt für Neuanlagen der Anspruch auf Einspeisevergütung.",
+        "technicalSolution": "Ein intelligenter Heimspeicher (Batteriespeicher) mit Energiemanagementsystem (HEMS) speichert den Mittagsstrom bei negativen Börsenpreisen automatisch ein, statt ihn unvergütet ins Netz abzugeben."
+      }
+    },
+    "taxAndGridRegulations": {
+      "vatZeroRate": {
+        "law": "§ 12 Abs. 3 UStG",
+        "ratePercent": 0,
+        "standardVatSavedPercent": 19,
+        "maxSystemSizeKwpSimplified": 30,
+        "appliesTo": [
+          "Solarmodule",
+          "Wechselrichter & Hybrid-Wechselrichter",
+          "Batteriespeicher (auch Nachrüstung)",
+          "Energiemanagementsysteme (HEMS) & Montage"
+        ]
+      },
+      "incomeTaxExemption": {
+        "law": "§ 3 Nr. 72 EStG",
+        "maxSystemSizeSingleFamilyKwp": 30,
+        "maxSystemSizeMultiFamilyPerUnitKwp": 15,
+        "maxTotalPerTaxpayerKwp": 100,
+        "description": "Einnahmen aus der Einspeisevergütung und der Eigenverbrauch sind komplett von der Einkommensteuer befreit (keine EÜR in der Steuererklärung nötig)."
+      },
+      "enwg14a": {
+        "law": "§ 14a EnWG",
+        "effectiveSince": "2024-01-01",
+        "status2026": "Verpflichtend für neue steuerbare Verbrauchseinrichtungen > 4,2 kW (Wallboxen, Wärmepumpen, große Stromspeicher). Im Gegenzug erhalten Haushalte reduzierte Netzentgelte.",
+        "modules": {
+          "modul1": "Pauschale Netzentgeltreduzierung (je nach Netzbetreiber ca. 110 € bis 190 € Gutschrift pro Jahr).",
+          "modul2": "Prozentuale Reduzierung des Arbeitspreises um 60 % für den steuerbaren Verbraucher (separater Zähler erforderlich).",
+          "modul3": "Zeitvariable Netzentgelte (ab 2025/2026): Besonders günstige Netzentgelte in lastschwachen Zeiten, ideal in Kombination mit dynamischen Stromtarifen und PV-Speicher."
+        }
+      },
+      "kfw270": {
+        "programName": "KfW-Förderkredit 270 (Erneuerbare Energien – Standard)",
+        "financingSharePercent": 100,
+        "eligibleItems": "Photovoltaik-Dachanlagen, Batteriespeicher, Energiemanagement, Montagekosten",
+        "applicationRule": "Antrag muss zwingend VOR Vertragsunterzeichnung über die Hausbank gestellt werden."
+      }
+    },
+    "marketCostBenchmarks2026": {
+      "nationalAvgElectricityPriceCtKwh": 36.8,
+      "assumedElectricityInflationPercentPerYear": 3,
+      "pvCostPerKwpWithoutStorageEur": {
+        "5kWp": 1520,
+        "8kWp": 1380,
+        "10kWp": 1290,
+        "12kWp": 1230,
+        "15kWp": 1170,
+        "20kWp": 1110
+      },
+      "batteryStorageCostPerKwhEur": {
+        "5kWh": 680,
+        "8kWh": 610,
+        "10kWh": 570,
+        "15kWh": 530
+      },
+      "fixedInstallationBaseCostEur": 2450,
+      "annualOperatingCostPercentOfInvest": 1,
+      "moduleDegradationPercentPerYear": 0.4,
+      "pvSelfConsumptionSharePercent": {
+        "withoutStorage": 30,
+        "withStorage": 72,
+        "withStorageAndEVOrHeatpump": 82
+      }
+    },
+    "roofOrientationTiltMatrix": {
+      "description": "Relativer Wirkungsgrad (in %) im Vergleich zur optimalen Südausrichtung (180° Azimut) bei 35° Dachneigung in Deutschland (Quelle: PVGIS / Fraunhofer ISE Referenzmodell).",
+      "azimuthAngles": {
+        "sued_180": {
+          "label": "Süd (0° / 180°)",
+          "tilt_15": 94,
+          "tilt_30": 100,
+          "tilt_35": 100,
+          "tilt_45": 98,
+          "tilt_60": 91
+        },
+        "suedost_suedwest_135_225": {
+          "label": "Süd-Ost / Süd-West (±45°)",
+          "tilt_15": 92,
+          "tilt_30": 96,
+          "tilt_35": 96,
+          "tilt_45": 94,
+          "tilt_60": 87
+        },
+        "ost_west_90_270": {
+          "label": "Ost / West (±90°)",
+          "tilt_15": 87,
+          "tilt_30": 84,
+          "tilt_35": 82,
+          "tilt_45": 78,
+          "tilt_60": 70
+        },
+        "nordost_nordwest_45_315": {
+          "label": "Nord-Ost / Nord-West (±135°)",
+          "tilt_15": 77,
+          "tilt_30": 68,
+          "tilt_35": 64,
+          "tilt_45": 57,
+          "tilt_60": 48
+        },
+        "flachdach_10": {
+          "label": "Flachdach (Aufständerung 10–15°)",
+          "tilt_15": 95,
+          "tilt_30": 95,
+          "tilt_35": 95,
+          "tilt_45": 95,
+          "tilt_60": 95
+        }
+      },
+      "monthlyYieldDistributionPercent": [
+        {
+          "month": "Jan",
+          "sharePercent": 2.6
+        },
+        {
+          "month": "Feb",
+          "sharePercent": 4.8
+        },
+        {
+          "month": "Mär",
+          "sharePercent": 8.9
+        },
+        {
+          "month": "Apr",
+          "sharePercent": 11.8
+        },
+        {
+          "month": "Mai",
+          "sharePercent": 13.9
+        },
+        {
+          "month": "Jun",
+          "sharePercent": 14.6
+        },
+        {
+          "month": "Jul",
+          "sharePercent": 14.4
+        },
+        {
+          "month": "Aug",
+          "sharePercent": 12.5
+        },
+        {
+          "month": "Sep",
+          "sharePercent": 8.8
+        },
+        {
+          "month": "Okt",
+          "sharePercent": 4.6
+        },
+        {
+          "month": "Nov",
+          "sharePercent": 2
+        },
+        {
+          "month": "Dez",
+          "sharePercent": 1.1
+        }
+      ]
+    },
+    "solarmetrikScoreFormula": {
+      "metricCode": "SME-2026",
+      "metricName": "SOLARMETRIK-Effizienzscore 2026",
+      "scale": "0 bis 100 Punkte",
+      "weights": {
+        "solarIrradiationWeight": 0.4,
+        "regionalInstallationCostEfficiencyWeight": 0.25,
+        "localGridTariffSavingsWeight": 0.2,
+        "localSubsidyAndRegulatoryBonusWeight": 0.15
+      },
+      "formulaExplanation": "Der SOLARMETRIK-Effizienzscore (SME-2026) ist ein redaktioneller Standort-Vergleichsindex (eigenes gewichtetes Berechnungsmodell von SOLARMETRIK, keine amtliche Messgröße). Er vergleicht die modellierte Wirtschaftlichkeit einer 10-kWp-Referenzanlage mit 10-kWh-Speicher anhand von vier gewichteten Faktoren: (1) Spezifischer Solarertrag in kWh/kWp laut DWD/PVGIS (40 %), (2) regionales Montage-Preisniveau in €/kWp (25 %), (3) lokaler Haushaltsstrompreis des Grundversorgers in ct/kWh als Hebel der Eigenverbrauchs-Ersparnis (20 %) sowie (4) verfügbare kommunale/Landes-Förderprogramme und Solarpflicht-Rahmenbedingungen 2026 (15 %)."
+    }
+  },
+  "bundeslaender": [
+    {
+      "slug": "baden-wuerttemberg",
+      "code": "BW",
+      "name": "Baden-Württemberg",
+      "capital": "Stuttgart",
+      "globalRadiationKwhM2": 1175,
+      "specificYieldKwhKwp": 1070,
+      "sunHoursPerYear": 1790,
+      "optimalTiltAngleDeg": 33,
+      "avgElectricityPriceCt": 37.2,
+      "avgCostPerKwpEur": 1310,
+      "avgTurnkey10kWpWithStorageEur": 18600,
+      "amortisationYears": 8.4,
+      "twentyYearNetProfitEur": 26900,
+      "solarmetrikScore": 94,
+      "solarpflicht": {
+        "neubauWohngebaeude": true,
+        "dachsanierungBestand": true,
+        "effectiveRule2026": "Verpflichtend bei Neubau (seit Mai 2022) sowie bei grundlegender Dachsanierung im Bestand (seit Jan. 2023). Mindestens 60 % der solargeeigneten Dachfläche müssen belegt werden."
+      },
+      "landesfoerderung": {
+        "programName": "L-Bank 'Wohnen mit Zukunft: Photovoltaik' + Kommunale Solaroffensiven",
+        "status2026": "Aktiv (Zinsverbilligte Darlehen L-Bank + kommunale Zuschüsse)",
+        "details": "Zinsgünstige Förderkredite über die Staatsbank für Baden-Württemberg (L-Bank) für PV-Anlagen, Speicher und Wärmepumpen. Ergänzend aktive kommunale Programme in vielen Städten (z. B. Freiburg, Karlsruhe, Ulm; in Stuttgart Warteliste 2027)."
+      },
+      "mainGridOperators": [
+        "Netze BW",
+        "TransnetBW",
+        "Stadtwerke Karlsruhe Netzservice",
+        "Stuttgarter Netze"
+      ]
+    },
+    {
+      "slug": "bayern",
+      "code": "BY",
+      "name": "Bayern",
+      "capital": "München",
+      "globalRadiationKwhM2": 1185,
+      "specificYieldKwhKwp": 1085,
+      "sunHoursPerYear": 1815,
+      "optimalTiltAngleDeg": 34,
+      "avgElectricityPriceCt": 36.9,
+      "avgCostPerKwpEur": 1320,
+      "avgTurnkey10kWpWithStorageEur": 18800,
+      "amortisationYears": 8.3,
+      "twentyYearNetProfitEur": 27400,
+      "solarmetrikScore": 95,
+      "solarpflicht": {
+        "neubauWohngebaeude": false,
+        "dachsanierungBestand": false,
+        "effectiveRule2026": "Für private Wohngebäude gilt in der Bayerischen Bauordnung (BayBO) weiterhin eine 'Soll'-Empfehlung (mind. 1/3 der geeigneten Dachfläche), jedoch keine bußgeldbewehrte Pflicht für Eigenheimbesitzer."
+      },
+      "landesfoerderung": {
+        "programName": "Kommunale Förderprogramme (z. B. FKG München, Klimaschutzfonds Augsburg/Regensburg) + KfW 270",
+        "status2026": "Kommunal aktiv / Bundesförderung (0 % MwSt + EEG)",
+        "details": "Nach Auslaufen des bayerischen 10.000-Häuser-Programms liegt der Fokus 2026 auf der extrem hohen Sonneneinstrahlung Süddeutschlands, 0 % Mehrwertsteuer sowie kommunalen Zuschüssen für Speicher, Mieterstrom und Beratung."
+      },
+      "mainGridOperators": [
+        "Bayernwerk Netz",
+        "SWM Infrastruktur (München)",
+        "LEW Verteilnetz",
+        "N-ERGIE Netz"
+      ]
+    },
+    {
+      "slug": "berlin",
+      "code": "BE",
+      "name": "Berlin",
+      "capital": "Berlin",
+      "globalRadiationKwhM2": 1065,
+      "specificYieldKwhKwp": 965,
+      "sunHoursPerYear": 1690,
+      "optimalTiltAngleDeg": 37,
+      "avgElectricityPriceCt": 38.4,
+      "avgCostPerKwpEur": 1350,
+      "avgTurnkey10kWpWithStorageEur": 19100,
+      "amortisationYears": 8.6,
+      "twentyYearNetProfitEur": 24800,
+      "solarmetrikScore": 91,
+      "solarpflicht": {
+        "neubauWohngebaeude": true,
+        "dachsanierungBestand": true,
+        "effectiveRule2026": "Solargesetz Berlin: Pflicht bei Neubauten und wesentlichen Dachumbauten ab 50 m² Nutzfläche. Mindestens 30 % der Nettodachfläche (bzw. pauschale kWp-Grenzen für Ein-/Zweifamilienhäuser) müssen belegt werden."
+      },
+      "landesfoerderung": {
+        "programName": "SolarPLUS Berlin (IBB Business Team)",
+        "status2026": "Aktiv (Direktzuschuss für Speicher, Messkonzepte & Fassaden-PV)",
+        "details": "Eines der stärksten Landesprogramme 2026: 'SolarPLUS' (Variante S für Eigenheime mit Pauschalen für Stromspeicher und Denkmal-PV, Variante L für Mehrfamilienhäuser und Gewerbe). Antrag zwingend vor Auftragsvergabe bei der IBB."
+      },
+      "mainGridOperators": [
+        "Stromnetz Berlin GmbH",
+        "50Hertz Transmission"
+      ]
+    },
+    {
+      "slug": "brandenburg",
+      "code": "BB",
+      "name": "Brandenburg",
+      "capital": "Potsdam",
+      "globalRadiationKwhM2": 1075,
+      "specificYieldKwhKwp": 975,
+      "sunHoursPerYear": 1710,
+      "optimalTiltAngleDeg": 37,
+      "avgElectricityPriceCt": 37.9,
+      "avgCostPerKwpEur": 1260,
+      "avgTurnkey10kWpWithStorageEur": 17900,
+      "amortisationYears": 8.9,
+      "twentyYearNetProfitEur": 23600,
+      "solarmetrikScore": 87,
+      "solarpflicht": {
+        "neubauWohngebaeude": false,
+        "dachsanierungBestand": false,
+        "effectiveRule2026": "Brandenburgische Bauordnung (BbgBO § 32a): Seit 01.06.2024 gilt die Solarpflicht für öffentliche und gewerbliche Nichtwohngebäude sowie Parkplätze ab 50 m² Fläche; für private Wohngebäude besteht 2026 keine landesweite Solardachpflicht."
+      },
+      "landesfoerderung": {
+        "programName": "ILB-Finanzierung & Kommunale Klimafonds (z. B. Potsdam / Cottbus)",
+        "status2026": "Aktiv über Bundesrahmen (0 % MwSt, KfW 270) + Stadtwerke-Boni",
+        "details": "Nachdem das ILB-Speicherprogramm ausgeschöpft wurde, profitieren Hausbesitzer in Brandenburg 2026 von vergleichsweise günstigen Handwerker-Montagepreisen (~1.260 €/kWp) und hohen Netzstrompreisen der Flächennetze, was den Eigenverbrauch stark rentabel macht."
+      },
+      "mainGridOperators": [
+        "E.DIS Netz",
+        "MITNETZ STROM",
+        "Energie und Wasser Potsdam (EWP)"
+      ]
+    },
+    {
+      "slug": "bremen",
+      "code": "HB",
+      "name": "Bremen",
+      "capital": "Bremen",
+      "globalRadiationKwhM2": 1015,
+      "specificYieldKwhKwp": 925,
+      "sunHoursPerYear": 1560,
+      "optimalTiltAngleDeg": 38,
+      "avgElectricityPriceCt": 37.1,
+      "avgCostPerKwpEur": 1290,
+      "avgTurnkey10kWpWithStorageEur": 18200,
+      "amortisationYears": 9.4,
+      "twentyYearNetProfitEur": 21200,
+      "solarmetrikScore": 83,
+      "solarpflicht": {
+        "neubauWohngebaeude": true,
+        "dachsanierungBestand": true,
+        "effectiveRule2026": "Bremisches Solargesetz: Pflicht bei Dachsanierung im Bestand (seit Juli 2024, wenn ≥ 80 % der Dachhaut erneuert werden) sowie bei Neubauten (seit Juli 2025, mind. 50 % der Dachfläche)."
+      },
+      "landesfoerderung": {
+        "programName": "BAB Förderprogramm & Bremer Umweltberatung / swb-Klimafonds",
+        "status2026": "Aktiv (Spezifische Zuschüsse für Dachbegrünung + PV-Kombination)",
+        "details": "Bremen koppelt die neue Solarpflicht 2026 an gezielte Beratungsangebote der energiekonsens GmbH sowie Förderkredite der Bremer Aufbau-Bank (BAB) und Kombi-Zuschüsse bei gleichzeitiger Dachbegrünung."
+      },
+      "mainGridOperators": [
+        "wesernetz Bremen GmbH",
+        "wesernetz Bremerhaven"
+      ]
+    },
+    {
+      "slug": "hamburg",
+      "code": "HH",
+      "name": "Hamburg",
+      "capital": "Hamburg",
+      "globalRadiationKwhM2": 1020,
+      "specificYieldKwhKwp": 930,
+      "sunHoursPerYear": 1580,
+      "optimalTiltAngleDeg": 38,
+      "avgElectricityPriceCt": 38.1,
+      "avgCostPerKwpEur": 1360,
+      "avgTurnkey10kWpWithStorageEur": 19200,
+      "amortisationYears": 9.5,
+      "twentyYearNetProfitEur": 21900,
+      "solarmetrikScore": 85,
+      "solarpflicht": {
+        "neubauWohngebaeude": true,
+        "dachsanierungBestand": true,
+        "effectiveRule2026": "Hamburgisches Klimaschutzgesetz: Pflicht für Neubauten (seit 2023) und bei Dachsanierungen (seit 2024, ab 50 % Erneuerung der Dachhaut). Mindestens 30 % der Nettodachfläche müssen mit PV belegt werden."
+      },
+      "landesfoerderung": {
+        "programName": "IFB Hamburg (Hamburgische Investitions- und Förderbank) – Gründach & Solar",
+        "status2026": "Aktiv (IFB-Zuschüsse für Solar-Gründach & energetische Modernisierung)",
+        "details": "Die IFB Hamburg bezuschusst 2026 insbesondere die Kombination aus Photovoltaik (Aufständerung) und Gründach sowie Mieterstrom- und Wärmepumpen-Kombinationen im Rahmen der Hamburger Klimaschutzförderung."
+      },
+      "mainGridOperators": [
+        "Hamburger Energienetze GmbH (ehem. Stromnetz Hamburg)"
+      ]
+    },
+    {
+      "slug": "hessen",
+      "code": "HE",
+      "name": "Hessen",
+      "capital": "Wiesbaden",
+      "globalRadiationKwhM2": 1105,
+      "specificYieldKwhKwp": 1005,
+      "sunHoursPerYear": 1680,
+      "optimalTiltAngleDeg": 35,
+      "avgElectricityPriceCt": 37,
+      "avgCostPerKwpEur": 1300,
+      "avgTurnkey10kWpWithStorageEur": 18500,
+      "amortisationYears": 8.7,
+      "twentyYearNetProfitEur": 24500,
+      "solarmetrikScore": 90,
+      "solarpflicht": {
+        "neubauWohngebaeude": false,
+        "dachsanierungBestand": false,
+        "effectiveRule2026": "Hessisches Energiegesetz: Solarpflicht gilt für landeseigene Gebäude und große gewerbliche Parkplätze (> 50 Stellplätze). Für private Wohngebäude besteht 2026 keine gesetzliche Pflicht."
+      },
+      "landesfoerderung": {
+        "programName": "WIBank Hessen Darlehen + Starke Kommunalprogramme (z. B. Frankfurt Klimabonus)",
+        "status2026": "Sehr aktiv auf Kommunalebene (Frankfurt bis zu 20 % Zuschuss)",
+        "details": "Während das Land Hessen über die WIBank zinsgünstige Modernisierungskredite vergibt, bieten hessische Großstädte wie Frankfurt am Main ('Klimabonus'), Darmstadt und Wiesbaden 2026 attraktive direkte Barzuschüsse für PV und Speicher."
+      },
+      "mainGridOperators": [
+        "Syna GmbH",
+        "Netzdienste Rhein-Main (NRM / Mainova)",
+        "EAM Netz",
+        "e-netz Südhessen"
+      ]
+    },
+    {
+      "slug": "mecklenburg-vorpommern",
+      "code": "MV",
+      "name": "Mecklenburg-Vorpommern",
+      "capital": "Schwerin",
+      "globalRadiationKwhM2": 1070,
+      "specificYieldKwhKwp": 980,
+      "sunHoursPerYear": 1765,
+      "optimalTiltAngleDeg": 38,
+      "avgElectricityPriceCt": 38.6,
+      "avgCostPerKwpEur": 1240,
+      "avgTurnkey10kWpWithStorageEur": 17600,
+      "amortisationYears": 8.6,
+      "twentyYearNetProfitEur": 24400,
+      "solarmetrikScore": 88,
+      "solarpflicht": {
+        "neubauWohngebaeude": false,
+        "dachsanierungBestand": false,
+        "effectiveRule2026": "Keine Solarpflicht für private Wohngebäude in Mecklenburg-Vorpommern."
+      },
+      "landesfoerderung": {
+        "programName": "LFI Mecklenburg-Vorpommern Klimaschutzförderung + Bundesrahmen",
+        "status2026": "Aktiv für Kommunen/Steckersolar + extrem hoher Küsten-Sonnenertrag",
+        "details": "Ostseeküsten-Regionen (Rügen, Rostock, Greifswald, Usedom) gehören 2026 zu den sonnenstundenreichsten Gebieten Deutschlands (~1.765–1.850 h/Jahr). Gepaart mit hohen lokalen Netzstrompreisen und günstigen Montagekosten ergibt sich eine Spitzen-Rendite."
+      },
+      "mainGridOperators": [
+        "WEMAG Netz",
+        "E.DIS Netz",
+        "Stadtwerke Rostock Netzgesellschaft"
+      ]
+    },
+    {
+      "slug": "niedersachsen",
+      "code": "NI",
+      "name": "Niedersachsen",
+      "capital": "Hannover",
+      "globalRadiationKwhM2": 1035,
+      "specificYieldKwhKwp": 945,
+      "sunHoursPerYear": 1595,
+      "optimalTiltAngleDeg": 37,
+      "avgElectricityPriceCt": 36.8,
+      "avgCostPerKwpEur": 1265,
+      "avgTurnkey10kWpWithStorageEur": 17950,
+      "amortisationYears": 9.1,
+      "twentyYearNetProfitEur": 22300,
+      "solarmetrikScore": 85,
+      "solarpflicht": {
+        "neubauWohngebaeude": true,
+        "dachsanierungBestand": false,
+        "effectiveRule2026": "Niedersächsische Bauordnung (NBauO): Seit 1. Januar 2025 gilt die Solarpflicht für alle neuen Wohngebäude (mind. 50 % der Dachfläche). Bei Dachsanierungen im Bestand ist die Tragfähigkeit/PV-Vorbereitung zu berücksichtigen."
+      },
+      "landesfoerderung": {
+        "programName": "NBank Förderkredite + Region Hannover Dach-Solar-Richtlinie 2026",
+        "status2026": "Aktiv in Regionen (z. B. Region Hannover, Braunschweig, Osnabrück)",
+        "details": "Die Region Hannover und die Landeshauptstadt Hannover haben ihre PV-Förderrichtlinien 2026 neu aufgelegt. Landesweit greifen 0 % MwSt, KfW 270 sowie NBank-Wohnraumförderungen."
+      },
+      "mainGridOperators": [
+        "Avacon Netz",
+        "EWE NETZ",
+        "enercity Netz (Hannover)",
+        "Westnetz"
+      ]
+    },
+    {
+      "slug": "nordrhein-westfalen",
+      "code": "NW",
+      "name": "Nordrhein-Westfalen",
+      "capital": "Düsseldorf",
+      "globalRadiationKwhM2": 1060,
+      "specificYieldKwhKwp": 965,
+      "sunHoursPerYear": 1615,
+      "optimalTiltAngleDeg": 36,
+      "avgElectricityPriceCt": 37.4,
+      "avgCostPerKwpEur": 1275,
+      "avgTurnkey10kWpWithStorageEur": 18100,
+      "amortisationYears": 8.8,
+      "twentyYearNetProfitEur": 23800,
+      "solarmetrikScore": 89,
+      "solarpflicht": {
+        "neubauWohngebaeude": true,
+        "dachsanierungBestand": true,
+        "effectiveRule2026": "WICHTIG AB 01.01.2026: Nach der Solarpflicht für Wohn-Neubauten (seit 2025) greift in NRW seit dem 1. Januar 2026 auch die verbindliche Solarpflicht bei vollständiger Dacherneuerung von Bestands-Wohngebäuden (mind. 30 % Nettodachfläche bzw. 3–4 kWp Mindestleistung bei EFH)."
+      },
+      "landesfoerderung": {
+        "programName": "NRW.BANK.Gebäudesanierung + Kommunale Töpfe (Düsseldorf, Bonn, Münster)",
+        "status2026": "Aktiv (Düsseldorf mit 1.000 € Basis + kWp-Bonus; Köln Budget Herbst 2026 ausgeschöpft)",
+        "details": "Während progres.nrw sich 2026 auf Spezialanlagen konzentriert, vergibt die NRW.BANK zinsgünstige Kredite. Auf Stadtebene bietet u. a. Düsseldorf ('Klimafreundliches Wohnen') hohe Direktzuschüsse, während das 8-Mio.-€-Budget in Köln im Herbst 2026 vorzeitig ausgeschöpft wurde."
+      },
+      "mainGridOperators": [
+        "Westnetz GmbH",
+        "RheinNetz (RNG Köln)",
+        "Netzgesellschaft Düsseldorf",
+        " Dortmunder Netz (DO-NETZ)"
+      ]
+    },
+    {
+      "slug": "rheinland-pfalz",
+      "code": "RP",
+      "name": "Rheinland-Pfalz",
+      "capital": "Mainz",
+      "globalRadiationKwhM2": 1135,
+      "specificYieldKwhKwp": 1030,
+      "sunHoursPerYear": 1730,
+      "optimalTiltAngleDeg": 35,
+      "avgElectricityPriceCt": 37.1,
+      "avgCostPerKwpEur": 1285,
+      "avgTurnkey10kWpWithStorageEur": 18250,
+      "amortisationYears": 8.5,
+      "twentyYearNetProfitEur": 25600,
+      "solarmetrikScore": 91,
+      "solarpflicht": {
+        "neubauWohngebaeude": false,
+        "dachsanierungBestand": false,
+        "effectiveRule2026": "Landessolargesetz RLP (LSolarG): Verbindliche PV-Installationspflicht gilt für neue Gewerbebauten ab 100 m² Nutzfläche, neue öffentliche Gebäude sowie neue Parkplätze ab 50 Stellplätzen; für private Wohngebäude besteht keine landesweite Installationspflicht."
+      },
+      "landesfoerderung": {
+        "programName": "KIPKI-Kommunalprogramme (Kommunales Investitionsprogramm Klimaschutz) + ISB",
+        "status2026": "Aktiv über Kommunen (KIPKI-Mittel) + hohe Sonneneinstrahlung",
+        "details": "Über das 250-Mio.-Euro-Programm KIPKI vergeben zahlreiche Städte und Landkreise in Rheinland-Pfalz (z. B. Mainz, Ludwigshafen, Trier, Kaiserslautern) auch 2026 lokale Zuschüsse für Solar- und Speicherprojekte."
+      },
+      "mainGridOperators": [
+        "Westnetz",
+        "Pfalzwerke Netz",
+        "Mainzer Netze",
+        "EWR Netz"
+      ]
+    },
+    {
+      "slug": "saarland",
+      "code": "SL",
+      "name": "Saarland",
+      "capital": "Saarbrücken",
+      "globalRadiationKwhM2": 1140,
+      "specificYieldKwhKwp": 1035,
+      "sunHoursPerYear": 1740,
+      "optimalTiltAngleDeg": 35,
+      "avgElectricityPriceCt": 37.6,
+      "avgCostPerKwpEur": 1295,
+      "avgTurnkey10kWpWithStorageEur": 18350,
+      "amortisationYears": 8.5,
+      "twentyYearNetProfitEur": 25900,
+      "solarmetrikScore": 91,
+      "solarpflicht": {
+        "neubauWohngebaeude": false,
+        "dachsanierungBestand": false,
+        "effectiveRule2026": "Keine allgemeine Solarpflicht für private Bestands-Wohngebäude; Fokus auf öffentliche Gebäude und gewerbliche Neubauten."
+      },
+      "landesfoerderung": {
+        "programName": "Saarländische Investitionskreditbank (SIKB) + Klima-Plus Saar",
+        "status2026": "Aktiv (Kredite & kommunale Stadtwerke-Prämien)",
+        "details": "Das Saarland gehört dank seiner südwestlichen Lage zu den Top-4-Sonnenregionen Deutschlands (~1.035 kWh/kWp). Zusammen mit überdurchschnittlichen Haushaltsstrompreisen amortisiert sich eine 10-kWp-Anlage hier bereits in ca. 8,5 Jahren."
+      },
+      "mainGridOperators": [
+        "energis-Netzgesellschaft",
+        "Stadtwerke Saarbrücken Netz"
+      ]
+    },
+    {
+      "slug": "sachsen",
+      "code": "SN",
+      "name": "Sachsen",
+      "capital": "Dresden",
+      "globalRadiationKwhM2": 1090,
+      "specificYieldKwhKwp": 990,
+      "sunHoursPerYear": 1695,
+      "optimalTiltAngleDeg": 36,
+      "avgElectricityPriceCt": 37.3,
+      "avgCostPerKwpEur": 1235,
+      "avgTurnkey10kWpWithStorageEur": 17550,
+      "amortisationYears": 8.6,
+      "twentyYearNetProfitEur": 24300,
+      "solarmetrikScore": 89,
+      "solarpflicht": {
+        "neubauWohngebaeude": false,
+        "dachsanierungBestand": false,
+        "effectiveRule2026": "Keine gesetzliche Solarpflicht für private Wohngebäude in Sachsen."
+      },
+      "landesfoerderung": {
+        "programName": "SAB 'Klimafreundlicher Wohnen' (Sächsische Aufbaubank)",
+        "status2026": "SAB-Steckersolar am 30.06.2026 ausgelaufen / SAB-Zinsdarlehen für Dach-PV aktiv",
+        "details": "Nachdem der SAB-Direktzuschuss für Balkonkraftwerke zum 30. Juni 2026 planmäßig endete, unterstützt die SAB große Dach-PV-Anlagen und Speicher über zinsverbilligte Darlehen. Zudem bietet Sachsen 2026 mit durchschnittlich 1.235 €/kWp sehr attraktive Handwerkerpreise."
+      },
+      "mainGridOperators": [
+        "SachsenNetze (SachsenEnergie / Dresden)",
+        "Netz Leipzig",
+        "MITNETZ STROM",
+        "inetz (Chemnitz)"
+      ]
+    },
+    {
+      "slug": "sachsen-anhalt",
+      "code": "ST",
+      "name": "Sachsen-Anhalt",
+      "capital": "Magdeburg",
+      "globalRadiationKwhM2": 1075,
+      "specificYieldKwhKwp": 975,
+      "sunHoursPerYear": 1675,
+      "optimalTiltAngleDeg": 36,
+      "avgElectricityPriceCt": 37.7,
+      "avgCostPerKwpEur": 1225,
+      "avgTurnkey10kWpWithStorageEur": 17400,
+      "amortisationYears": 8.7,
+      "twentyYearNetProfitEur": 23900,
+      "solarmetrikScore": 88,
+      "solarpflicht": {
+        "neubauWohngebaeude": false,
+        "dachsanierungBestand": false,
+        "effectiveRule2026": "Keine Solarpflicht für private Wohngebäude in Sachsen-Anhalt."
+      },
+      "landesfoerderung": {
+        "programName": "IB Sachsen-Anhalt Modernisierungskredite + Stadtwerke-Programme (Halle / Magdeburg)",
+        "status2026": "Aktiv über Bundesförderung (0 % MwSt, KfW 270) + niedrigste Montagekosten",
+        "details": "Sachsen-Anhalt verzeichnet 2026 bundesweit mit die günstigsten Installationskosten pro kWp (~1.225 €/kWp) bei gleichzeitig hohen Netzstrompreisen (~37,7 ct/kWh), was zu einer sehr schnellen Amortisation auch ohne Landes-Barzuschuss führt."
+      },
+      "mainGridOperators": [
+        "Avacon Netz",
+        "MITNETZ STROM",
+        "Städtische Werke Magdeburg (SWM Netze)",
+        "Energieversorgung Halle Netz"
+      ]
+    },
+    {
+      "slug": "schleswig-holstein",
+      "code": "SH",
+      "name": "Schleswig-Holstein",
+      "capital": "Kiel",
+      "globalRadiationKwhM2": 1030,
+      "specificYieldKwhKwp": 945,
+      "sunHoursPerYear": 1650,
+      "optimalTiltAngleDeg": 38,
+      "avgElectricityPriceCt": 38.5,
+      "avgCostPerKwpEur": 1280,
+      "avgTurnkey10kWpWithStorageEur": 18100,
+      "amortisationYears": 8.9,
+      "twentyYearNetProfitEur": 23100,
+      "solarmetrikScore": 86,
+      "solarpflicht": {
+        "neubauWohngebaeude": false,
+        "dachsanierungBestand": false,
+        "effectiveRule2026": "Energiewende- und Klimaschutzgesetz SH (EWKG § 9): Verbindliche Solarpflicht gilt für Nichtwohngebäude (Neubau & Dachsanierung > 10 %) sowie große Parkplätze (ab 70 Stellplätzen). Für private Wohngebäude besteht landesweit keine gesetzliche Installationspflicht (nur über kommunale B-Pläne)."
+      },
+      "landesfoerderung": {
+        "programName": "IB.SH Energetische Stadtsanierung + § 14a EnWG Netzentgelt-Vorteil",
+        "status2026": "Aktiv über IB.SH-Kredite, 0 % MwSt und hohe Netzentgelt-Ersparnis",
+        "details": "Durch den hohen Windkraft-Ausbau im Norden hatte Schleswig-Holstein traditionell hohe Netzentgelte. Durch die Neuregelung der Netzentgelte und § 14a EnWG (Steuerbare Speicher/Wärmepumpen) sparen PV-Betreiber in SH 2026 überdurchschnittlich viel beim Strombezug."
+      },
+      "mainGridOperators": [
+        "Schleswig-Holstein Netz (SH Netz)",
+        "Stromnetz Kiel",
+        "TraveNetz (Lübeck)"
+      ]
+    },
+    {
+      "slug": "thueringen",
+      "code": "TH",
+      "name": "Thüringen",
+      "capital": "Erfurt",
+      "globalRadiationKwhM2": 1080,
+      "specificYieldKwhKwp": 980,
+      "sunHoursPerYear": 1665,
+      "optimalTiltAngleDeg": 36,
+      "avgElectricityPriceCt": 37.5,
+      "avgCostPerKwpEur": 1230,
+      "avgTurnkey10kWpWithStorageEur": 17500,
+      "amortisationYears": 8.6,
+      "twentyYearNetProfitEur": 24100,
+      "solarmetrikScore": 88,
+      "solarpflicht": {
+        "neubauWohngebaeude": false,
+        "dachsanierungBestand": false,
+        "effectiveRule2026": "Keine Solarpflicht für private Wohngebäude in Thüringen."
+      },
+      "landesfoerderung": {
+        "programName": "Thüringer Aufbaubank (TAB) & SolarInput e.V. Beratungsnetzwerk",
+        "status2026": "Solar Invest ausgelaufen / Fokus auf 0 % MwSt, KfW 270 & Kommunal-Boni (Jena/Erfurt)",
+        "details": "Nach Einstellung des alten Programms 'Solar Invest' profitieren Eigenheimbesitzer in Thüringen 2026 vom bundesweiten Nullsteuersatz (0 % MwSt), günstigen ostdeutschen Handwerkertarifen (~1.230 €/kWp) und dem kostenlosen Solardachkataster Thüringen."
+      },
+      "mainGridOperators": [
+        "Thüringer Energienetze (TEN)",
+        "SWE Netz (Erfurt)",
+        "Stadtwerke Jena Netze"
+      ]
+    }
+  ],
+  "staedte": [
+    {
+      "slug": "muenchen",
+      "name": "München",
+      "bundeslandSlug": "bayern",
+      "bundeslandName": "Bayern",
+      "population": 1512491,
+      "plzRange": "80331–81929",
+      "lat": 48.1351,
+      "lon": 11.582,
+      "optimalTiltDeg": 34,
+      "globalRadiationKwhM2": 1205,
+      "specificYieldKwhKwp": 1110,
+      "sunHoursPerYear": 1855,
+      "avgCostPerKwpEur": 1365,
+      "localElectricityPriceCt": 37.5,
+      "turnkey10kWpWithStorageEur": 19350,
+      "amortisationYears": 8.1,
+      "twentyYearNetProfitEur": 28900,
+      "twentyYearGridLossWithoutPvEur": 44200,
+      "solarmetrikScore": 96,
+      "localGridOperator": "SWM Infrastruktur GmbH & Co. KG (Stadtwerke München)",
+      "kommunaleFoerderung2026": {
+        "programName": "Förderprogramm Klimaneutrale Gebäude (FKG München)",
+        "status": "Aktiv für Beratung, Mieterstrom & Sonder-PV (Standard-Dach über 0 % MwSt + EEG)",
+        "details": "München fördert im FKG 2026 gezielt PV-Beratungen, Fassaden-PV und Mieterstrommodelle. Dank 1.110 kWh/kWp Spitzenertrag amortisiert sich eine Standard-Dachanlage auch ohne städtischen Barzuschuss in Rekordzeit."
+      }
+    },
+    {
+      "slug": "nuernberg",
+      "name": "Nürnberg",
+      "bundeslandSlug": "bayern",
+      "bundeslandName": "Bayern",
+      "population": 523026,
+      "plzRange": "90402–90491",
+      "lat": 49.4521,
+      "lon": 11.0767,
+      "optimalTiltDeg": 35,
+      "globalRadiationKwhM2": 1155,
+      "specificYieldKwhKwp": 1060,
+      "sunHoursPerYear": 1765,
+      "avgCostPerKwpEur": 1305,
+      "localElectricityPriceCt": 36.8,
+      "turnkey10kWpWithStorageEur": 18550,
+      "amortisationYears": 8.4,
+      "twentyYearNetProfitEur": 26700,
+      "twentyYearGridLossWithoutPvEur": 43100,
+      "solarmetrikScore": 93,
+      "localGridOperator": "N-ERGIE Netz GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Solarinitiative Nürnberg & N-ERGIE CO2-Minderungsprogramm",
+        "status": "Aktiv (Kunden-Prämien über N-ERGIE & kostenlose Erstberatung)",
+        "details": "Die Stadt Nürnberg bietet über die Solarinitiative kostenlose neutrale Beratungen; Stromkunden der N-ERGIE profitieren zudem von spezifischen Förderbausteinen im CO2-Minderungsprogramm."
+      }
+    },
+    {
+      "slug": "augsburg",
+      "name": "Augsburg",
+      "bundeslandSlug": "bayern",
+      "bundeslandName": "Bayern",
+      "population": 301033,
+      "plzRange": "86150–86199",
+      "lat": 48.3705,
+      "lon": 10.8978,
+      "optimalTiltDeg": 34,
+      "globalRadiationKwhM2": 1195,
+      "specificYieldKwhKwp": 1095,
+      "sunHoursPerYear": 1830,
+      "avgCostPerKwpEur": 1315,
+      "localElectricityPriceCt": 36.9,
+      "turnkey10kWpWithStorageEur": 18700,
+      "amortisationYears": 8.2,
+      "twentyYearNetProfitEur": 27900,
+      "twentyYearGridLossWithoutPvEur": 43300,
+      "solarmetrikScore": 95,
+      "localGridOperator": "swa Netze GmbH (Stadtwerke Augsburg)",
+      "kommunaleFoerderung2026": {
+        "programName": "Augsburger Klimaschutzfonds & swa Solar-Bonus",
+        "status": "Aktiv (Kombi-Zuschüsse für Dachbegrünung + PV)",
+        "details": "Augsburg zählt zu den sonnenreichsten Großstädten Deutschlands. Die Stadtwerke Augsburg (swa) und die städtische Umweltberatung unterstützen Kombi-Projekte aus Gründach und Photovoltaik."
+      }
+    },
+    {
+      "slug": "regensburg",
+      "name": "Regensburg",
+      "bundeslandSlug": "bayern",
+      "bundeslandName": "Bayern",
+      "population": 157443,
+      "plzRange": "93047–93059",
+      "lat": 49.0134,
+      "lon": 12.1016,
+      "optimalTiltDeg": 34,
+      "globalRadiationKwhM2": 1170,
+      "specificYieldKwhKwp": 1075,
+      "sunHoursPerYear": 1790,
+      "avgCostPerKwpEur": 1300,
+      "localElectricityPriceCt": 36.6,
+      "turnkey10kWpWithStorageEur": 18500,
+      "amortisationYears": 8.3,
+      "twentyYearNetProfitEur": 27100,
+      "twentyYearGridLossWithoutPvEur": 42900,
+      "solarmetrikScore": 94,
+      "localGridOperator": "REWAG (Regensburger Energie- und Wasserversorgung) / Netzgesellschaft",
+      "kommunaleFoerderung2026": {
+        "programName": "Regensburger Förderprogramm Energie & Klima",
+        "status": "Aktiv (Zuschüsse für Speicher-Kombinationen & Denkmalschutz-PV)",
+        "details": "Die Stadt Regensburg fördert im Rahmen ihrer Klimaschutzrichtlinie ausgewählte Solarspeicher- und Effizienzmaßnahmen im Stadtgebiet."
+      }
+    },
+    {
+      "slug": "wuerzburg",
+      "name": "Würzburg",
+      "bundeslandSlug": "bayern",
+      "bundeslandName": "Bayern",
+      "population": 127810,
+      "plzRange": "97070–97084",
+      "lat": 49.7913,
+      "lon": 9.9534,
+      "optimalTiltDeg": 35,
+      "globalRadiationKwhM2": 1160,
+      "specificYieldKwhKwp": 1065,
+      "sunHoursPerYear": 1775,
+      "avgCostPerKwpEur": 1295,
+      "localElectricityPriceCt": 36.7,
+      "turnkey10kWpWithStorageEur": 18400,
+      "amortisationYears": 8.3,
+      "twentyYearNetProfitEur": 26950,
+      "twentyYearGridLossWithoutPvEur": 43000,
+      "solarmetrikScore": 94,
+      "localGridOperator": "Mainfranken Netze GmbH (WVV)",
+      "kommunaleFoerderung2026": {
+        "programName": "Würzburger Klimaschutz-Förderprogramm",
+        "status": "Aktiv (Zuschüsse für Gründach-PV & Fassadenanlagen)",
+        "details": "Unterfranken bietet trockenes, sonnenreiches Klima mit minimaler Schneelast – ideal für hohe Jahreserträge über 1.060 kWh pro kWp."
+      }
+    },
+    {
+      "slug": "stuttgart",
+      "name": "Stuttgart",
+      "bundeslandSlug": "baden-wuerttemberg",
+      "bundeslandName": "Baden-Württemberg",
+      "population": 632865,
+      "plzRange": "70173–70619",
+      "lat": 48.7758,
+      "lon": 9.1829,
+      "optimalTiltDeg": 34,
+      "globalRadiationKwhM2": 1180,
+      "specificYieldKwhKwp": 1080,
+      "sunHoursPerYear": 1805,
+      "avgCostPerKwpEur": 1340,
+      "localElectricityPriceCt": 37.4,
+      "turnkey10kWpWithStorageEur": 19000,
+      "amortisationYears": 8.3,
+      "twentyYearNetProfitEur": 27600,
+      "twentyYearGridLossWithoutPvEur": 43900,
+      "solarmetrikScore": 95,
+      "localGridOperator": "Stuttgarter Netze Betrieb GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Stuttgarter Solaroffensive / Energiesparprogramm (ESP)",
+        "status": "Reformiert Mai 2026 (Jahresbudget 2026 ausgeschöpft – L-Bank-Förderkredite & Bundesrahmen aktiv)",
+        "details": "Stuttgart hat das ESP im Mai 2026 auf Dach-PV-Zusatzarbeiten und Speicher fokussiert. Nach Ausschöpfung des kommunalen Jahrestopfes 2026 im Sommer greifen für Neuanlagen die bundesweite EEG-Einspeisevergütung, 0 % MwSt. (§ 12 Abs. 3 UStG) sowie L-Bank-Förderkredite."
+      }
+    },
+    {
+      "slug": "freiburg-im-breisgau",
+      "name": "Freiburg im Breisgau",
+      "bundeslandSlug": "baden-wuerttemberg",
+      "bundeslandName": "Baden-Württemberg",
+      "population": 236140,
+      "plzRange": "79098–79117",
+      "lat": 47.999,
+      "lon": 7.8421,
+      "optimalTiltDeg": 33,
+      "globalRadiationKwhM2": 1230,
+      "specificYieldKwhKwp": 1135,
+      "sunHoursPerYear": 1910,
+      "avgCostPerKwpEur": 1330,
+      "localElectricityPriceCt": 37.3,
+      "turnkey10kWpWithStorageEur": 18900,
+      "amortisationYears": 7.8,
+      "twentyYearNetProfitEur": 30200,
+      "twentyYearGridLossWithoutPvEur": 43800,
+      "solarmetrikScore": 98,
+      "localGridOperator": "bnNETZE GmbH (badenova)",
+      "kommunaleFoerderung2026": {
+        "programName": "Klimafreundliches Wohnen Freiburg & badenova Klimafonds",
+        "status": "Aktiv (Zuschüsse für PV-Speicher, Dachsanierung & Solarpflicht-Bonus)",
+        "details": "Platz 1 im SOLARMETRIK-Ranking 2026: Als sonnenreichste Großstadt Deutschlands (~1.910 Sonnenstunden, 1.135 kWh/kWp) erreicht Freiburg Amortisationszeiten unter 8 Jahren."
+      }
+    },
+    {
+      "slug": "karlsruhe",
+      "name": "Karlsruhe",
+      "bundeslandSlug": "baden-wuerttemberg",
+      "bundeslandName": "Baden-Württemberg",
+      "population": 309964,
+      "plzRange": "76131–76229",
+      "lat": 49.0069,
+      "lon": 8.4037,
+      "optimalTiltDeg": 34,
+      "globalRadiationKwhM2": 1195,
+      "specificYieldKwhKwp": 1095,
+      "sunHoursPerYear": 1845,
+      "avgCostPerKwpEur": 1315,
+      "localElectricityPriceCt": 37.1,
+      "turnkey10kWpWithStorageEur": 18650,
+      "amortisationYears": 8.1,
+      "twentyYearNetProfitEur": 28300,
+      "twentyYearGridLossWithoutPvEur": 43500,
+      "solarmetrikScore": 96,
+      "localGridOperator": "Stadtwerke Karlsruhe Netzservice GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Karlsruher Klimaschutz-Förderprogramm & L-Bank Darlehen",
+        "status": "Aktiv (Gründach-PV-Kombination & L-Bank Zinsverbilligung)",
+        "details": "Im Oberrheingraben gelegen, profitiert Karlsruhe von Spitzenwerten der Globalstrahlung (1.195 kWh/m²) und der baden-württembergischen L-Bank-Förderung."
+      }
+    },
+    {
+      "slug": "mannheim",
+      "name": "Mannheim",
+      "bundeslandSlug": "baden-wuerttemberg",
+      "bundeslandName": "Baden-Württemberg",
+      "population": 316877,
+      "plzRange": "68159–68309",
+      "lat": 49.4875,
+      "lon": 8.466,
+      "optimalTiltDeg": 34,
+      "globalRadiationKwhM2": 1165,
+      "specificYieldKwhKwp": 1065,
+      "sunHoursPerYear": 1785,
+      "avgCostPerKwpEur": 1305,
+      "localElectricityPriceCt": 37.2,
+      "turnkey10kWpWithStorageEur": 18550,
+      "amortisationYears": 8.3,
+      "twentyYearNetProfitEur": 27100,
+      "twentyYearGridLossWithoutPvEur": 43600,
+      "solarmetrikScore": 94,
+      "localGridOperator": "MVV Netze GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Klima-Aktionstage & Mannheimer Förderprogramm (Klimaschutzagentur)",
+        "status": "Aktiv (Zuschüsse über Klimaschutzagentur Mannheim & L-Bank)",
+        "details": "Die Klimaschutzagentur Mannheim unterstützt Eigentümer mit kostenloser Vor-Ort-Solarberatung und Zuschüssen für kombinierte Dachbegrünungs- und Solarprojekte."
+      }
+    },
+    {
+      "slug": "heidelberg",
+      "name": "Heidelberg",
+      "bundeslandSlug": "baden-wuerttemberg",
+      "bundeslandName": "Baden-Württemberg",
+      "population": 162273,
+      "plzRange": "69115–69126",
+      "lat": 49.3988,
+      "lon": 8.6724,
+      "optimalTiltDeg": 34,
+      "globalRadiationKwhM2": 1165,
+      "specificYieldKwhKwp": 1065,
+      "sunHoursPerYear": 1780,
+      "avgCostPerKwpEur": 1325,
+      "localElectricityPriceCt": 37.4,
+      "turnkey10kWpWithStorageEur": 18800,
+      "amortisationYears": 8.4,
+      "twentyYearNetProfitEur": 26900,
+      "twentyYearGridLossWithoutPvEur": 43900,
+      "solarmetrikScore": 94,
+      "localGridOperator": "Stadtwerke Heidelberg Netze GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Förderprogramm 'Dach- und Fassadenbegrünung + Photovoltaik' Heidelberg",
+        "status": "Aktiv (Zuschüsse für Denkmalschutz-PV, Speicher & Ökostrom-Bonus)",
+        "details": "Heidelberg fördert nachhaltige Solarinstallationen auch im historischen Bestand sowie in Kombination mit den Stadtwerken Heidelberg."
+      }
+    },
+    {
+      "slug": "ulm",
+      "name": "Ulm",
+      "bundeslandSlug": "baden-wuerttemberg",
+      "bundeslandName": "Baden-Württemberg",
+      "population": 129942,
+      "plzRange": "89073–89081",
+      "lat": 48.4011,
+      "lon": 9.9876,
+      "optimalTiltDeg": 34,
+      "globalRadiationKwhM2": 1185,
+      "specificYieldKwhKwp": 1085,
+      "sunHoursPerYear": 1810,
+      "avgCostPerKwpEur": 1300,
+      "localElectricityPriceCt": 36.9,
+      "turnkey10kWpWithStorageEur": 18450,
+      "amortisationYears": 8.2,
+      "twentyYearNetProfitEur": 27800,
+      "twentyYearGridLossWithoutPvEur": 43300,
+      "solarmetrikScore": 95,
+      "localGridOperator": "SWU Netze GmbH (Stadtwerke Ulm/Neu-Ulm)",
+      "kommunaleFoerderung2026": {
+        "programName": "Ulmer Solar-Offensive & SWU SchwabenStrom-Bonus",
+        "status": "Aktiv (Zuschüsse für Speicher & Dach-PV im Stadtgebiet Ulm)",
+        "details": "Ulm verbindet süddeutsche Spitzeneinstrahlung mit aktiver Unterstützung durch die Regionale Energieagentur Ulm und die SWU."
+      }
+    },
+    {
+      "slug": "berlin-stadt",
+      "name": "Berlin",
+      "bundeslandSlug": "berlin",
+      "bundeslandName": "Berlin",
+      "population": 3782202,
+      "plzRange": "10115–14199",
+      "lat": 52.52,
+      "lon": 13.405,
+      "optimalTiltDeg": 37,
+      "globalRadiationKwhM2": 1065,
+      "specificYieldKwhKwp": 965,
+      "sunHoursPerYear": 1690,
+      "avgCostPerKwpEur": 1350,
+      "localElectricityPriceCt": 38.4,
+      "turnkey10kWpWithStorageEur": 19100,
+      "amortisationYears": 8.6,
+      "twentyYearNetProfitEur": 24800,
+      "twentyYearGridLossWithoutPvEur": 45100,
+      "solarmetrikScore": 91,
+      "localGridOperator": "Stromnetz Berlin GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "SolarPLUS Berlin (IBB Business Team)",
+        "status": "Aktiv 2026 (Direktzuschuss für Stromspeicher, Zählerschrank & Fassaden-PV)",
+        "details": "Über das Landesprogramm SolarPLUS erhalten Berliner Eigenheimbesitzer (Variante S) auch 2026 direkte Pauschalen für Heimspeicher und Messkonzepte."
+      }
+    },
+    {
+      "slug": "hamburg-stadt",
+      "name": "Hamburg",
+      "bundeslandSlug": "hamburg",
+      "bundeslandName": "Hamburg",
+      "population": 1910160,
+      "plzRange": "20095–22769",
+      "lat": 53.5511,
+      "lon": 9.9937,
+      "optimalTiltDeg": 38,
+      "globalRadiationKwhM2": 1020,
+      "specificYieldKwhKwp": 930,
+      "sunHoursPerYear": 1580,
+      "avgCostPerKwpEur": 1360,
+      "localElectricityPriceCt": 38.1,
+      "turnkey10kWpWithStorageEur": 19200,
+      "amortisationYears": 9.5,
+      "twentyYearNetProfitEur": 21900,
+      "twentyYearGridLossWithoutPvEur": 44700,
+      "solarmetrikScore": 85,
+      "localGridOperator": "Hamburger Energienetze GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "IFB Hamburg – Hamburger Gründach- & Solarförderung",
+        "status": "Aktiv (Zuschüsse für Solar-Gründach-Aufständerung & Wärmepumpen-Kombination)",
+        "details": "In Hamburg greift bei Dachsanierungen (> 50 % Fläche) die gesetzliche Solarpflicht; die IFB Hamburg unterstützt insbesondere Gründach-Solar-Kombinationen."
+      }
+    },
+    {
+      "slug": "koeln",
+      "name": "Köln",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 1087353,
+      "plzRange": "50667–51149",
+      "lat": 50.9375,
+      "lon": 6.9603,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1075,
+      "specificYieldKwhKwp": 980,
+      "sunHoursPerYear": 1630,
+      "avgCostPerKwpEur": 1295,
+      "localElectricityPriceCt": 37.8,
+      "turnkey10kWpWithStorageEur": 18350,
+      "amortisationYears": 8.6,
+      "twentyYearNetProfitEur": 24600,
+      "twentyYearGridLossWithoutPvEur": 44400,
+      "solarmetrikScore": 90,
+      "localGridOperator": "RheinNetz GmbH (RNG / RheinEnergie)",
+      "kommunaleFoerderung2026": {
+        "programName": "Photovoltaik – klimafreundliches Wohnen in Köln",
+        "status": "Stand Herbst 2026: 8-Mio.-€-Stadttopf ausgeschöpft (Antragsstopp) – 0 % MwSt & EEG-Vergütung aktiv",
+        "details": "Das Kölner 8-Millionen-Euro-Förderbudget für 2026 wurde aufgrund hoher Antragszahlen vorzeitig ausgeschöpft. Für Neuinstallationen in Köln gelten weiterhin die bundesweiten Rahmenbedingungen (20-jährige EEG-Einspeisevergütung und 0 % MwSt. nach § 12 Abs. 3 UStG)."
+      }
+    },
+    {
+      "slug": "duesseldorf",
+      "name": "Düsseldorf",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 631217,
+      "plzRange": "40210–40629",
+      "lat": 51.2277,
+      "lon": 6.7735,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1065,
+      "specificYieldKwhKwp": 970,
+      "sunHoursPerYear": 1620,
+      "avgCostPerKwpEur": 1290,
+      "localElectricityPriceCt": 37.6,
+      "turnkey10kWpWithStorageEur": 18300,
+      "amortisationYears": 8.4,
+      "twentyYearNetProfitEur": 25800,
+      "twentyYearGridLossWithoutPvEur": 44100,
+      "solarmetrikScore": 92,
+      "localGridOperator": "Netzgesellschaft Düsseldorf mbH (Stadtwerke Düsseldorf)",
+      "kommunaleFoerderung2026": {
+        "programName": "Klimafreundliches Wohnen und Arbeiten in Düsseldorf",
+        "status": "AKTIV 2026 (1.000 € Grundförderung + leistungsabhängiger kWp-Bonus + Speicher)",
+        "details": "Düsseldorf bietet 2026 eines der attraktivsten kommunalen Förderprogramme Deutschlands mit direktem Barzuschuss für Dach-PV, BIPV und Batteriespeicher."
+      }
+    },
+    {
+      "slug": "dortmund",
+      "name": "Dortmund",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 595471,
+      "plzRange": "44135–44388",
+      "lat": 51.5136,
+      "lon": 7.4653,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1055,
+      "specificYieldKwhKwp": 960,
+      "sunHoursPerYear": 1605,
+      "avgCostPerKwpEur": 1265,
+      "localElectricityPriceCt": 37.5,
+      "turnkey10kWpWithStorageEur": 17950,
+      "amortisationYears": 8.7,
+      "twentyYearNetProfitEur": 23900,
+      "twentyYearGridLossWithoutPvEur": 44000,
+      "solarmetrikScore": 89,
+      "localGridOperator": "Dortmunder Netz GmbH (DO-NETZ / DEW21)",
+      "kommunaleFoerderung2026": {
+        "programName": "Dortmunder Klimaschutz-Fördertopf & DEW21 Förderprogramme",
+        "status": "Aktiv (Zuschüsse für Gründach-PV & NRW.BANK-Sanierungskredit)",
+        "details": "Seit 1. Januar 2026 gilt in Dortmund (NRW) die Solarpflicht bei vollständiger Dacherneuerung im Bestand. Günstige Handwerkerpreise im Ruhrgebiet (~1.265 €/kWp) senken die Einstiegskosten."
+      }
+    },
+    {
+      "slug": "essen",
+      "name": "Essen",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 586608,
+      "plzRange": "45127–45359",
+      "lat": 51.4556,
+      "lon": 7.0116,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1055,
+      "specificYieldKwhKwp": 960,
+      "sunHoursPerYear": 1605,
+      "avgCostPerKwpEur": 1260,
+      "localElectricityPriceCt": 37.4,
+      "turnkey10kWpWithStorageEur": 17900,
+      "amortisationYears": 8.7,
+      "twentyYearNetProfitEur": 23800,
+      "twentyYearGridLossWithoutPvEur": 43900,
+      "solarmetrikScore": 89,
+      "localGridOperator": "Westnetz GmbH (Region Essen)",
+      "kommunaleFoerderung2026": {
+        "programName": "Essener Förderprogramm Klimaschutz (Grüne Hauptstadt)",
+        "status": "Aktiv (Fokus auf Dachbegrünung + Solar sowie Steckersolar)",
+        "details": "Als Sitz großer Energiekonzerne verfügt Essen über ein dichtes Netz zertifizierter Solarteure mit kurzen Wartezeiten für die Inbetriebnahme noch vor Jahresende 2026."
+      }
+    },
+    {
+      "slug": "bonn",
+      "name": "Bonn",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 335789,
+      "plzRange": "53111–53229",
+      "lat": 50.7374,
+      "lon": 7.0982,
+      "optimalTiltDeg": 35,
+      "globalRadiationKwhM2": 1085,
+      "specificYieldKwhKwp": 990,
+      "sunHoursPerYear": 1650,
+      "avgCostPerKwpEur": 1285,
+      "localElectricityPriceCt": 37.5,
+      "turnkey10kWpWithStorageEur": 18250,
+      "amortisationYears": 8.5,
+      "twentyYearNetProfitEur": 25100,
+      "twentyYearGridLossWithoutPvEur": 44000,
+      "solarmetrikScore": 91,
+      "localGridOperator": "Bonn-Netz GmbH (SWB Energie und Wasser)",
+      "kommunaleFoerderung2026": {
+        "programName": "Förderprogramm 'Solares Bonn'",
+        "status": "Aktiv (Zuschüsse für Dach-PV-Planung, Speicher-Kombinationen & Fassaden-PV)",
+        "details": "'Solares Bonn' gehört zu den Vorzeigeprogrammen in NRW und unterstützt Bürger auf dem Weg zur städtischen Klimaneutralität."
+      }
+    },
+    {
+      "slug": "muenster",
+      "name": "Münster",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 322904,
+      "plzRange": "48143–48167",
+      "lat": 51.9607,
+      "lon": 7.6261,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1050,
+      "specificYieldKwhKwp": 955,
+      "sunHoursPerYear": 1600,
+      "avgCostPerKwpEur": 1270,
+      "localElectricityPriceCt": 37.2,
+      "turnkey10kWpWithStorageEur": 18000,
+      "amortisationYears": 8.8,
+      "twentyYearNetProfitEur": 23600,
+      "twentyYearGridLossWithoutPvEur": 43600,
+      "solarmetrikScore": 89,
+      "localGridOperator": "Stadtnetze Münster GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Klima-Förderprogramm Stadt Münster (Münster Zukünfte)",
+        "status": "Aktiv (Zuschüsse für PV-Sonderflächen, Gründach & Energetische Sanierung)",
+        "details": "Münster unterstützt die neue NRW-Solarpflicht bei Dachsanierungen 2026 durch kommunale Beratungs- und Förderbausteine."
+      }
+    },
+    {
+      "slug": "frankfurt-am-main",
+      "name": "Frankfurt am Main",
+      "bundeslandSlug": "hessen",
+      "bundeslandName": "Hessen",
+      "population": 775790,
+      "plzRange": "60306–65936",
+      "lat": 50.1109,
+      "lon": 8.6821,
+      "optimalTiltDeg": 35,
+      "globalRadiationKwhM2": 1125,
+      "specificYieldKwhKwp": 1025,
+      "sunHoursPerYear": 1715,
+      "avgCostPerKwpEur": 1320,
+      "localElectricityPriceCt": 37.3,
+      "turnkey10kWpWithStorageEur": 18750,
+      "amortisationYears": 8,
+      "twentyYearNetProfitEur": 27900,
+      "twentyYearGridLossWithoutPvEur": 43800,
+      "solarmetrikScore": 95,
+      "localGridOperator": "Netzdienste Rhein-Main GmbH (NRM / Mainova)",
+      "kommunaleFoerderung2026": {
+        "programName": "Frankfurter Programm 'Klimabonus'",
+        "status": "TOP-FÖRDERUNG AKTIV 2026 (Bis zu 20 % Zuschuss auf PV-Anlagen & Batteriespeicher)",
+        "details": "Frankfurt bietet mit dem 'Klimabonus' 2026 eines der bundesweit höchsten kommunalen Förderprogramme (bis zu 20 % Zuschuss). Wichtig: Antrag zwingend vor Auftragsvergabe einreichen!"
+      }
+    },
+    {
+      "slug": "wiesbaden",
+      "name": "Wiesbaden",
+      "bundeslandSlug": "hessen",
+      "bundeslandName": "Hessen",
+      "population": 285522,
+      "plzRange": "65183–65207",
+      "lat": 50.0782,
+      "lon": 8.2398,
+      "optimalTiltDeg": 35,
+      "globalRadiationKwhM2": 1125,
+      "specificYieldKwhKwp": 1025,
+      "sunHoursPerYear": 1710,
+      "avgCostPerKwpEur": 1310,
+      "localElectricityPriceCt": 37.1,
+      "turnkey10kWpWithStorageEur": 18600,
+      "amortisationYears": 8.5,
+      "twentyYearNetProfitEur": 25600,
+      "twentyYearGridLossWithoutPvEur": 43500,
+      "solarmetrikScore": 92,
+      "localGridOperator": "ESWE Versorgungs AG / Netz",
+      "kommunaleFoerderung2026": {
+        "programName": "Wiesbadener Klimaschutz-Förderprogramm & ESWE Innovationsfonds",
+        "status": "Aktiv (Zuschüsse über Umweltamt Wiesbaden & ESWE)",
+        "details": "Das sonnenreiche Rhein-Main-Klima sorgt in Wiesbaden für über 1.025 kWh Ertrag pro installiertem kWp."
+      }
+    },
+    {
+      "slug": "kassel",
+      "name": "Kassel",
+      "bundeslandSlug": "hessen",
+      "bundeslandName": "Hessen",
+      "population": 204687,
+      "plzRange": "34117–34134",
+      "lat": 51.3127,
+      "lon": 9.4797,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1065,
+      "specificYieldKwhKwp": 970,
+      "sunHoursPerYear": 1615,
+      "avgCostPerKwpEur": 1275,
+      "localElectricityPriceCt": 36.8,
+      "turnkey10kWpWithStorageEur": 18100,
+      "amortisationYears": 8.8,
+      "twentyYearNetProfitEur": 23700,
+      "twentyYearGridLossWithoutPvEur": 43100,
+      "solarmetrikScore": 89,
+      "localGridOperator": "Städtische Werke Netz + Service GmbH (Kassel)",
+      "kommunaleFoerderung2026": {
+        "programName": "Kasseler Klimaschutzförderung & Städtische Werke Solar-Kombis",
+        "status": "Aktiv (WIBank Hessen Darlehen + kommunale Speicher/Gründach-Impulse)",
+        "details": "Als traditionsreicher Solar-Forschungsstandort (Fraunhofer IEE) verfügt Kassel über erstklassige Fachbetriebe und schnelle Netzanschlussprozesse."
+      }
+    },
+    {
+      "slug": "hannover",
+      "name": "Hannover",
+      "bundeslandSlug": "niedersachsen",
+      "bundeslandName": "Niedersachsen",
+      "population": 548186,
+      "plzRange": "30159–30659",
+      "lat": 52.3759,
+      "lon": 9.732,
+      "optimalTiltDeg": 37,
+      "globalRadiationKwhM2": 1045,
+      "specificYieldKwhKwp": 955,
+      "sunHoursPerYear": 1610,
+      "avgCostPerKwpEur": 1270,
+      "localElectricityPriceCt": 37.1,
+      "turnkey10kWpWithStorageEur": 18050,
+      "amortisationYears": 8.9,
+      "twentyYearNetProfitEur": 23300,
+      "twentyYearGridLossWithoutPvEur": 43500,
+      "solarmetrikScore": 88,
+      "localGridOperator": "enercity Netz GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Dach-Solar-Richtlinie Region Hannover 2026 & proKlima Fonds",
+        "status": "NEU AUFGELEGT 2026 (Aktiv über Region Hannover & enercity proKlima)",
+        "details": "Die Region Hannover und der proKlima-Fonds bieten 2026 gezielte Zuschüsse für Dach-Solar-Vollbelegung und Sanierungskombinationen."
+      }
+    },
+    {
+      "slug": "braunschweig",
+      "name": "Braunschweig",
+      "bundeslandSlug": "niedersachsen",
+      "bundeslandName": "Niedersachsen",
+      "population": 252066,
+      "plzRange": "38100–38126",
+      "lat": 52.2689,
+      "lon": 10.5268,
+      "optimalTiltDeg": 37,
+      "globalRadiationKwhM2": 1050,
+      "specificYieldKwhKwp": 960,
+      "sunHoursPerYear": 1620,
+      "avgCostPerKwpEur": 1260,
+      "localElectricityPriceCt": 36.9,
+      "turnkey10kWpWithStorageEur": 17900,
+      "amortisationYears": 8.9,
+      "twentyYearNetProfitEur": 23400,
+      "twentyYearGridLossWithoutPvEur": 43300,
+      "solarmetrikScore": 88,
+      "localGridOperator": "Braunschweiger Netz GmbH (BS|NETZ)",
+      "kommunaleFoerderung2026": {
+        "programName": "Förderprogramm Photovoltaik & Gründach Stadt Braunschweig",
+        "status": "Aktiv (Zuschüsse im Rahmen des Braunschweiger Klimaschutzkonzepts)",
+        "details": "Braunschweig unterstützt Eigentümer bei der Kombination aus Photovoltaik, Speicher und energetischer Dachmodernisierung."
+      }
+    },
+    {
+      "slug": "osnabrueck",
+      "name": "Osnabrück",
+      "bundeslandSlug": "niedersachsen",
+      "bundeslandName": "Niedersachsen",
+      "population": 166462,
+      "plzRange": "49074–49090",
+      "lat": 52.2799,
+      "lon": 8.0472,
+      "optimalTiltDeg": 37,
+      "globalRadiationKwhM2": 1040,
+      "specificYieldKwhKwp": 950,
+      "sunHoursPerYear": 1595,
+      "avgCostPerKwpEur": 1255,
+      "localElectricityPriceCt": 36.7,
+      "turnkey10kWpWithStorageEur": 17800,
+      "amortisationYears": 9,
+      "twentyYearNetProfitEur": 22900,
+      "twentyYearGridLossWithoutPvEur": 43000,
+      "solarmetrikScore": 87,
+      "localGridOperator": "SWO Netz GmbH (Stadtwerke Osnabrück)",
+      "kommunaleFoerderung2026": {
+        "programName": "Osnabrücker Gründach- & Solarprogramm",
+        "status": "Aktiv (Kommunale Kombi-Förderung + NBank-Kredite)",
+        "details": "Osnabrück war Vorreiter beim Solardachkataster und bietet 2026 attraktive Handwerkertarife unter dem Bundesdurchschnitt."
+      }
+    },
+    {
+      "slug": "leipzig",
+      "name": "Leipzig",
+      "bundeslandSlug": "sachsen",
+      "bundeslandName": "Sachsen",
+      "population": 619879,
+      "plzRange": "04103–04357",
+      "lat": 51.3397,
+      "lon": 12.3731,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1090,
+      "specificYieldKwhKwp": 990,
+      "sunHoursPerYear": 1700,
+      "avgCostPerKwpEur": 1235,
+      "localElectricityPriceCt": 37.4,
+      "turnkey10kWpWithStorageEur": 17550,
+      "amortisationYears": 8.4,
+      "twentyYearNetProfitEur": 24900,
+      "twentyYearGridLossWithoutPvEur": 43900,
+      "solarmetrikScore": 91,
+      "localGridOperator": "Netz Leipzig GmbH (Leipziger Stadtwerke)",
+      "kommunaleFoerderung2026": {
+        "programName": "SAB 'Klimafreundlicher Wohnen' & Leipziger Klimafonds",
+        "status": "Aktiv (Zinsdarlehen SAB + 0 % MwSt; SAB-Steckersolar am 30.06.2026 beendet)",
+        "details": "Leipzig punktet 2026 mit einem hervorragenden Preis-Leistungs-Verhältnis: Hohe Sonneneinstrahlung (990 kWh/kWp) trifft auf günstige sächsische Montagepreise (~1.235 €/kWp)."
+      }
+    },
+    {
+      "slug": "dresden",
+      "name": "Dresden",
+      "bundeslandSlug": "sachsen",
+      "bundeslandName": "Sachsen",
+      "population": 566222,
+      "plzRange": "01067–01328",
+      "lat": 51.0504,
+      "lon": 13.7373,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1100,
+      "specificYieldKwhKwp": 1000,
+      "sunHoursPerYear": 1715,
+      "avgCostPerKwpEur": 1240,
+      "localElectricityPriceCt": 37.3,
+      "turnkey10kWpWithStorageEur": 17600,
+      "amortisationYears": 8.4,
+      "twentyYearNetProfitEur": 25200,
+      "twentyYearGridLossWithoutPvEur": 43800,
+      "solarmetrikScore": 91,
+      "localGridOperator": "SachsenNetze GmbH (SachsenEnergie)",
+      "kommunaleFoerderung2026": {
+        "programName": "SAB-Wohnraumförderung & SachsenEnergie Öko-Prämien",
+        "status": "Aktiv (1.000 kWh/kWp im Elbtal + 0 % MwSt + SAB-Darlehen)",
+        "details": "Das Dresdner Elbtal erreicht volle 1.000 kWh Ertrag pro kWp – bei deutlich niedrigeren Anschaffungskosten als in Süddeutschland."
+      }
+    },
+    {
+      "slug": "mainz",
+      "name": "Mainz",
+      "bundeslandSlug": "rheinland-pfalz",
+      "bundeslandName": "Rheinland-Pfalz",
+      "population": 222889,
+      "plzRange": "55116–55131",
+      "lat": 49.9929,
+      "lon": 8.2473,
+      "optimalTiltDeg": 35,
+      "globalRadiationKwhM2": 1140,
+      "specificYieldKwhKwp": 1040,
+      "sunHoursPerYear": 1745,
+      "avgCostPerKwpEur": 1290,
+      "localElectricityPriceCt": 37.2,
+      "turnkey10kWpWithStorageEur": 18300,
+      "amortisationYears": 8.3,
+      "twentyYearNetProfitEur": 26300,
+      "twentyYearGridLossWithoutPvEur": 43600,
+      "solarmetrikScore": 93,
+      "localGridOperator": "Mainzer Netze GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Mainzer KIPKI-Solarförderung & Mainzer Stiftung für Klimaschutz",
+        "status": "Aktiv (Zuschüsse aus KIPKI-Landesmitteln & Mainzer Klimastiftung)",
+        "details": "Rheinhessen zählt zu den wärmsten und sonnenreichsten Regionen Deutschlands; Mainz nutzt KIPKI-Mittel gezielt für private Klimaschutzmaßnahmen."
+      }
+    },
+    {
+      "slug": "bremen-stadt",
+      "name": "Bremen",
+      "bundeslandSlug": "bremen",
+      "bundeslandName": "Bremen",
+      "population": 577026,
+      "plzRange": "28195–28779",
+      "lat": 53.0793,
+      "lon": 8.8017,
+      "optimalTiltDeg": 38,
+      "globalRadiationKwhM2": 1015,
+      "specificYieldKwhKwp": 925,
+      "sunHoursPerYear": 1560,
+      "avgCostPerKwpEur": 1290,
+      "localElectricityPriceCt": 37.1,
+      "turnkey10kWpWithStorageEur": 18200,
+      "amortisationYears": 9.4,
+      "twentyYearNetProfitEur": 21200,
+      "twentyYearGridLossWithoutPvEur": 43500,
+      "solarmetrikScore": 83,
+      "localGridOperator": "wesernetz Bremen GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "energiekonsens Bremen & BAB-Solarkredit",
+        "status": "Aktiv (Pflicht bei Dachsanierung ≥ 80 % + Gründach-PV-Zuschuss)",
+        "details": "In Bremen greift bei größeren Dachsanierungen und Neubauten die gesetzliche Solarpflicht; energiekonsens bietet kostenlose Vor-Ort-Solarchecks an."
+      }
+    },
+    {
+      "slug": "kiel",
+      "name": "Kiel",
+      "bundeslandSlug": "schleswig-holstein",
+      "bundeslandName": "Schleswig-Holstein",
+      "population": 248873,
+      "plzRange": "24103–24159",
+      "lat": 54.3233,
+      "lon": 10.1228,
+      "optimalTiltDeg": 38,
+      "globalRadiationKwhM2": 1035,
+      "specificYieldKwhKwp": 950,
+      "sunHoursPerYear": 1660,
+      "avgCostPerKwpEur": 1280,
+      "localElectricityPriceCt": 38.5,
+      "turnkey10kWpWithStorageEur": 18100,
+      "amortisationYears": 8.8,
+      "twentyYearNetProfitEur": 23400,
+      "twentyYearGridLossWithoutPvEur": 45200,
+      "solarmetrikScore": 87,
+      "localGridOperator": "Stromnetz Kiel GmbH (Stadtwerke Kiel)",
+      "kommunaleFoerderung2026": {
+        "programName": "Masterplan 100 % Klimaschutz Kiel & § 14a EnWG Netzentgelt-Bonus",
+        "status": "Aktiv (Hohe Eigenverbrauchs-Rendite durch 38,5 ct/kWh Netzstrompreis)",
+        "details": "Durch kühlenden Ostseewind arbeiten Solarmodule in Kiel im Sommer mit höherem Zell-Wirkungsgrad; hohe lokale Strompreise verkürzen die Amortisation auf 8,8 Jahre."
+      }
+    },
+    {
+      "slug": "rostock",
+      "name": "Rostock",
+      "bundeslandSlug": "mecklenburg-vorpommern",
+      "bundeslandName": "Mecklenburg-Vorpommern",
+      "population": 210795,
+      "plzRange": "18055–18147",
+      "lat": 54.0924,
+      "lon": 12.0991,
+      "optimalTiltDeg": 38,
+      "globalRadiationKwhM2": 1080,
+      "specificYieldKwhKwp": 990,
+      "sunHoursPerYear": 1790,
+      "avgCostPerKwpEur": 1240,
+      "localElectricityPriceCt": 38.6,
+      "turnkey10kWpWithStorageEur": 17600,
+      "amortisationYears": 8.4,
+      "twentyYearNetProfitEur": 25100,
+      "twentyYearGridLossWithoutPvEur": 45300,
+      "solarmetrikScore": 90,
+      "localGridOperator": "Stadtwerke Rostock Netzgesellschaft mbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Rostocker Klimaschutz-Förderung & Ostsee-Sonnenbonus",
+        "status": "Aktiv (Überraschungs-Sieger im Norden: 1.790 Sonnenstunden/Jahr)",
+        "details": "Die Ostseeküste um Rostock zählt zu den sonnenstundenreichsten Zonen Deutschlands. Zusammen mit 38,6 ct/kWh Netzstrompreis entsteht eine herausragende Rendite."
+      }
+    },
+    {
+      "slug": "potsdam",
+      "name": "Potsdam",
+      "bundeslandSlug": "brandenburg",
+      "bundeslandName": "Brandenburg",
+      "population": 187119,
+      "plzRange": "14467–14482",
+      "lat": 52.3906,
+      "lon": 13.0645,
+      "optimalTiltDeg": 37,
+      "globalRadiationKwhM2": 1075,
+      "specificYieldKwhKwp": 975,
+      "sunHoursPerYear": 1710,
+      "avgCostPerKwpEur": 1275,
+      "localElectricityPriceCt": 38,
+      "turnkey10kWpWithStorageEur": 18050,
+      "amortisationYears": 8.7,
+      "twentyYearNetProfitEur": 24100,
+      "twentyYearGridLossWithoutPvEur": 44600,
+      "solarmetrikScore": 89,
+      "localGridOperator": "Netzgesellschaft Potsdam GmbH (NGP / EWP)",
+      "kommunaleFoerderung2026": {
+        "programName": "Masterplan 100 % Klimaschutz Potsdam & EWP-Solar",
+        "status": "Aktiv (Spezialberatung für Denkmalschutz & 0 % MwSt)",
+        "details": "Potsdam unterstützt Hausbesitzer intensiv bei der Genehmigung von Solaranlagen in denkmalgeschützten Quartieren und profitiert von hohen Brandenburger Stromtarifen."
+      }
+    },
+    {
+      "slug": "magdeburg",
+      "name": "Magdeburg",
+      "bundeslandSlug": "sachsen-anhalt",
+      "bundeslandName": "Sachsen-Anhalt",
+      "population": 240114,
+      "plzRange": "39104–39130",
+      "lat": 52.1205,
+      "lon": 11.6276,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1075,
+      "specificYieldKwhKwp": 975,
+      "sunHoursPerYear": 1680,
+      "avgCostPerKwpEur": 1225,
+      "localElectricityPriceCt": 37.7,
+      "turnkey10kWpWithStorageEur": 17400,
+      "amortisationYears": 8.6,
+      "twentyYearNetProfitEur": 24200,
+      "twentyYearGridLossWithoutPvEur": 44200,
+      "solarmetrikScore": 89,
+      "localGridOperator": "Städtische Werke Magdeburg GmbH & Co. KG (SWM Netze)",
+      "kommunaleFoerderung2026": {
+        "programName": "SWM Magdeburg Öko-Impuls & IB Sachsen-Anhalt",
+        "status": "Aktiv (Niedrigste Montagekosten Deutschlands ~1.225 €/kWp)",
+        "details": "In Magdeburg kostet eine schlüsselfertige 10-kWp-Anlage mit Speicher im Schnitt rund 1.500–2.000 € weniger als in westdeutschen Ballungsräumen."
+      }
+    },
+    {
+      "slug": "erfurt",
+      "name": "Erfurt",
+      "bundeslandSlug": "thueringen",
+      "bundeslandName": "Thüringen",
+      "population": 215675,
+      "plzRange": "99084–99099",
+      "lat": 50.9848,
+      "lon": 11.0299,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1085,
+      "specificYieldKwhKwp": 985,
+      "sunHoursPerYear": 1675,
+      "avgCostPerKwpEur": 1230,
+      "localElectricityPriceCt": 37.5,
+      "turnkey10kWpWithStorageEur": 17500,
+      "amortisationYears": 8.5,
+      "twentyYearNetProfitEur": 24500,
+      "twentyYearGridLossWithoutPvEur": 44000,
+      "solarmetrikScore": 89,
+      "localGridOperator": "SWE Netz GmbH (Stadtwerke Erfurt)",
+      "kommunaleFoerderung2026": {
+        "programName": "Thüringer Solardachkataster & Umweltamt Erfurt Förderung",
+        "status": "Aktiv (Gründach-PV-Zuschüsse & TAB-Modernisierungskredite)",
+        "details": "Im sonnigen Thüringer Becken gelegen, bietet Erfurt überdurchschnittliche Erträge von 985 kWh/kWp bei günstigen Handwerkerpreisen."
+      }
+    },
+    {
+      "slug": "saarbruecken",
+      "name": "Saarbrücken",
+      "bundeslandSlug": "saarland",
+      "bundeslandName": "Saarland",
+      "population": 183509,
+      "plzRange": "66111–66133",
+      "lat": 49.2402,
+      "lon": 6.9969,
+      "optimalTiltDeg": 35,
+      "globalRadiationKwhM2": 1145,
+      "specificYieldKwhKwp": 1040,
+      "sunHoursPerYear": 1750,
+      "avgCostPerKwpEur": 1295,
+      "localElectricityPriceCt": 37.6,
+      "turnkey10kWpWithStorageEur": 18350,
+      "amortisationYears": 8.4,
+      "twentyYearNetProfitEur": 26100,
+      "twentyYearGridLossWithoutPvEur": 44100,
+      "solarmetrikScore": 92,
+      "localGridOperator": "Stadtwerke Saarbrücken Netz AG",
+      "kommunaleFoerderung2026": {
+        "programName": "Klima-Plus Saarbrücken & SIKB-Energiekredit",
+        "status": "Aktiv (Zuschüsse der Stadtwerke Saarbrücken & hohe Sonneneinstrahlung)",
+        "details": "Saarbrücken gehört mit 1.145 kWh/m² Globalstrahlung zu den Top-Solarstädten außerhalb Baden-Württembergs und Bayerns."
+      }
+    },
+    {
+      "slug": "duisburg",
+      "name": "Duisburg",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 503707,
+      "plzRange": "47051–47279",
+      "lat": 51.4344,
+      "lon": 6.7623,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1055,
+      "specificYieldKwhKwp": 960,
+      "sunHoursPerYear": 1605,
+      "avgCostPerKwpEur": 1255,
+      "localElectricityPriceCt": 37.4,
+      "turnkey10kWpWithStorageEur": 17800,
+      "amortisationYears": 8.6,
+      "twentyYearNetProfitEur": 24000,
+      "twentyYearGridLossWithoutPvEur": 43900,
+      "solarmetrikScore": 89,
+      "localGridOperator": "Netze Duisburg GmbH (Stadtwerke Duisburg)",
+      "kommunaleFoerderung2026": {
+        "programName": "Duisburger Klimaschutz-Programm & Stadtwerke Solar-Bonus",
+        "status": "Aktiv (Günstige Montagekosten ~1.255 €/kWp + NRW-Solarpflicht bei Dachsanierung 2026)",
+        "details": "In Duisburg profitieren Hausbesitzer von niedrigen Handwerkerpreisen am Niederrhein und kurzen Netzanschlusszeiten bei der Netze Duisburg GmbH."
+      }
+    },
+    {
+      "slug": "bochum",
+      "name": "Bochum",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 366385,
+      "plzRange": "44787–44894",
+      "lat": 51.4818,
+      "lon": 7.2162,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1055,
+      "specificYieldKwhKwp": 960,
+      "sunHoursPerYear": 1605,
+      "avgCostPerKwpEur": 1260,
+      "localElectricityPriceCt": 37.5,
+      "turnkey10kWpWithStorageEur": 17900,
+      "amortisationYears": 8.7,
+      "twentyYearNetProfitEur": 23900,
+      "twentyYearGridLossWithoutPvEur": 44000,
+      "solarmetrikScore": 89,
+      "localGridOperator": "Stadtwerke Bochum Netz GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Bochumer Klimaschutz-Fördertopf & Stadtwerke Öko-Bonus",
+        "status": "Aktiv (Gründach-Solar-Kombination & NRW.BANK Gebäudesanierung)",
+        "details": "Die Stadtwerke Bochum und das Umweltamt unterstützen Bürger bei der Umsetzung der seit 2026 gültigen NRW-Solarpflicht bei Dacherneuerungen."
+      }
+    },
+    {
+      "slug": "wuppertal",
+      "name": "Wuppertal",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 358938,
+      "plzRange": "42103–42399",
+      "lat": 51.2562,
+      "lon": 7.1508,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1050,
+      "specificYieldKwhKwp": 955,
+      "sunHoursPerYear": 1595,
+      "avgCostPerKwpEur": 1265,
+      "localElectricityPriceCt": 37.6,
+      "turnkey10kWpWithStorageEur": 17950,
+      "amortisationYears": 8.7,
+      "twentyYearNetProfitEur": 23700,
+      "twentyYearGridLossWithoutPvEur": 44100,
+      "solarmetrikScore": 88,
+      "localGridOperator": "WSW Netz GmbH (Wuppertaler Stadtwerke)",
+      "kommunaleFoerderung2026": {
+        "programName": "WSW Klimafonds & Wuppertaler Solar-Initiative",
+        "status": "Aktiv (Zuschüsse über WSW Klimafonds für Ökostrom-Kunden)",
+        "details": "Der WSW Klimafonds der Wuppertaler Stadtwerke bezuschusst regelmäßig private Photovoltaik- und Speicherprojekte von WSW-Kunden."
+      }
+    },
+    {
+      "slug": "bielefeld",
+      "name": "Bielefeld",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 338410,
+      "plzRange": "33602–33739",
+      "lat": 52.0302,
+      "lon": 8.5325,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1045,
+      "specificYieldKwhKwp": 950,
+      "sunHoursPerYear": 1595,
+      "avgCostPerKwpEur": 1260,
+      "localElectricityPriceCt": 37.2,
+      "turnkey10kWpWithStorageEur": 17850,
+      "amortisationYears": 8.8,
+      "twentyYearNetProfitEur": 23400,
+      "twentyYearGridLossWithoutPvEur": 43600,
+      "solarmetrikScore": 88,
+      "localGridOperator": "SWB Netz GmbH (Stadtwerke Bielefeld)",
+      "kommunaleFoerderung2026": {
+        "programName": "Bielefelder Klimabonus & Stadtwerke Bielefeld Solar",
+        "status": "Aktiv (Zuschüsse für Dachbegrünung + PV sowie Beratungsschecks)",
+        "details": "Ostwestfalen-Lippe bietet stabile Handwerkskapazitäten und faire Montagepreise von rund 1.260 €/kWp."
+      }
+    },
+    {
+      "slug": "aachen",
+      "name": "Aachen",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 252769,
+      "plzRange": "52062–52080",
+      "lat": 50.7753,
+      "lon": 6.0839,
+      "optimalTiltDeg": 35,
+      "globalRadiationKwhM2": 1075,
+      "specificYieldKwhKwp": 980,
+      "sunHoursPerYear": 1640,
+      "avgCostPerKwpEur": 1280,
+      "localElectricityPriceCt": 37.6,
+      "turnkey10kWpWithStorageEur": 18150,
+      "amortisationYears": 8.5,
+      "twentyYearNetProfitEur": 24900,
+      "twentyYearGridLossWithoutPvEur": 44100,
+      "solarmetrikScore": 91,
+      "localGridOperator": "Regionetz GmbH (STAWAG Aachen)",
+      "kommunaleFoerderung2026": {
+        "programName": "Aachener Förderprogramm Klimaschutz & STAWAG Solar",
+        "status": "Aktiv (Zuschüsse für PV, Speicher & Gründach im Stadtgebiet Aachen)",
+        "details": "Als führender energietechnischer Hochschulstandort (RWTH Aachen) zählt Aachen zu den Vorreitern bei kommunaler Solarförderung und Smart-Grid-Integration."
+      }
+    },
+    {
+      "slug": "moenchengladbach",
+      "name": "Mönchengladbach",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 268943,
+      "plzRange": "41061–41239",
+      "lat": 51.1805,
+      "lon": 6.4428,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1065,
+      "specificYieldKwhKwp": 970,
+      "sunHoursPerYear": 1620,
+      "avgCostPerKwpEur": 1265,
+      "localElectricityPriceCt": 37.3,
+      "turnkey10kWpWithStorageEur": 17950,
+      "amortisationYears": 8.6,
+      "twentyYearNetProfitEur": 24300,
+      "twentyYearGridLossWithoutPvEur": 43800,
+      "solarmetrikScore": 90,
+      "localGridOperator": "NEW Netz GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Klimaschutz-Förderung Mönchengladbach & NEW Energie-Vorteil",
+        "status": "Aktiv (0 % MwSt + NRW.BANK-Kredit + kommunale Klimabausteine)",
+        "details": "Am linken Niederrhein profitieren PV-Betreiber von milden Wintern ohne Schneebedeckung auf den Solarmodulen."
+      }
+    },
+    {
+      "slug": "gelsenkirchen",
+      "name": "Gelsenkirchen",
+      "bundeslandSlug": "nordrhein-westfalen",
+      "bundeslandName": "Nordrhein-Westfalen",
+      "population": 265885,
+      "plzRange": "45879–45899",
+      "lat": 51.5177,
+      "lon": 7.0857,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1055,
+      "specificYieldKwhKwp": 960,
+      "sunHoursPerYear": 1605,
+      "avgCostPerKwpEur": 1250,
+      "localElectricityPriceCt": 37.4,
+      "turnkey10kWpWithStorageEur": 17750,
+      "amortisationYears": 8.6,
+      "twentyYearNetProfitEur": 24100,
+      "twentyYearGridLossWithoutPvEur": 43900,
+      "solarmetrikScore": 89,
+      "localGridOperator": "ELE Verteilnetz GmbH (EVNG / Emscher Lippe Energie)",
+      "kommunaleFoerderung2026": {
+        "programName": "Solarstadt Gelsenkirchen – Klimaschutzförderung",
+        "status": "Aktiv (Traditions-Solarstadt mit günstigen Installationskosten ~1.250 €/kWp)",
+        "details": "Die 'Stadt der 1000 Sonnen' bietet im Ruhrgebiet besonders niedrige Montagepreise und schnelle Genehmigungswege."
+      }
+    },
+    {
+      "slug": "chemnitz",
+      "name": "Chemnitz",
+      "bundeslandSlug": "sachsen",
+      "bundeslandName": "Sachsen",
+      "population": 250681,
+      "plzRange": "09111–09247",
+      "lat": 50.8278,
+      "lon": 12.9214,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1095,
+      "specificYieldKwhKwp": 995,
+      "sunHoursPerYear": 1705,
+      "avgCostPerKwpEur": 1230,
+      "localElectricityPriceCt": 37.2,
+      "turnkey10kWpWithStorageEur": 17500,
+      "amortisationYears": 8.4,
+      "twentyYearNetProfitEur": 25000,
+      "twentyYearGridLossWithoutPvEur": 43600,
+      "solarmetrikScore": 91,
+      "localGridOperator": "inetz GmbH (eins energie in sachsen)",
+      "kommunaleFoerderung2026": {
+        "programName": "SAB 'Klimafreundlicher Wohnen' & eins-Energie-Prämien",
+        "status": "Aktiv (Günstige Anschaffungskosten ~1.230 €/kWp + 995 kWh/kWp Ertrag)",
+        "details": "Chemnitz verbindet hohe mittelsächsische Sonneneinstrahlung mit sehr moderaten Handwerkerkosten."
+      }
+    },
+    {
+      "slug": "halle-saale",
+      "name": "Halle (Saale)",
+      "bundeslandSlug": "sachsen-anhalt",
+      "bundeslandName": "Sachsen-Anhalt",
+      "population": 242172,
+      "plzRange": "06108–06132",
+      "lat": 51.4828,
+      "lon": 11.9697,
+      "optimalTiltDeg": 36,
+      "globalRadiationKwhM2": 1085,
+      "specificYieldKwhKwp": 985,
+      "sunHoursPerYear": 1695,
+      "avgCostPerKwpEur": 1225,
+      "localElectricityPriceCt": 37.6,
+      "turnkey10kWpWithStorageEur": 17400,
+      "amortisationYears": 8.5,
+      "twentyYearNetProfitEur": 24600,
+      "twentyYearGridLossWithoutPvEur": 44100,
+      "solarmetrikScore": 90,
+      "localGridOperator": "Energieversorgung Halle Netz GmbH (EVH / Stadtwerke Halle)",
+      "kommunaleFoerderung2026": {
+        "programName": "Hallescher Klimafonds & EVH-Sonnenstrom-Vorteil",
+        "status": "Aktiv (Trockengebiet Mitteldeutschland mit 1.695 Sonnenstunden)",
+        "details": "Im Regenschatten des Harzes gelegen, verzeichnet Halle (Saale) überdurchschnittlich viele Sonnenstunden bei minimalen Montagepreisen."
+      }
+    },
+    {
+      "slug": "luebeck",
+      "name": "Lübeck",
+      "bundeslandSlug": "schleswig-holstein",
+      "bundeslandName": "Schleswig-Holstein",
+      "population": 219044,
+      "plzRange": "23552–23570",
+      "lat": 53.8655,
+      "lon": 10.6866,
+      "optimalTiltDeg": 38,
+      "globalRadiationKwhM2": 1045,
+      "specificYieldKwhKwp": 955,
+      "sunHoursPerYear": 1680,
+      "avgCostPerKwpEur": 1275,
+      "localElectricityPriceCt": 38.4,
+      "turnkey10kWpWithStorageEur": 18050,
+      "amortisationYears": 8.7,
+      "twentyYearNetProfitEur": 23700,
+      "twentyYearGridLossWithoutPvEur": 45100,
+      "solarmetrikScore": 88,
+      "localGridOperator": "TraveNetz GmbH (Stadtwerke Lübeck)",
+      "kommunaleFoerderung2026": {
+        "programName": "Klimaschutz-Initiative Lübeck & IB.SH Darlehen",
+        "status": "Aktiv (Sonderleitfaden für Welterbe/Denkmalschutz-Dächer + § 14a EnWG Bonus)",
+        "details": "An der Lübecker Bucht sorgen Ostsee-Sonnenstunden und hohe Netzstrompreise (38,4 ct/kWh) für hohe Eigenverbrauchs-Ersparnisse."
+      }
+    },
+    {
+      "slug": "darmstadt",
+      "name": "Darmstadt",
+      "bundeslandSlug": "hessen",
+      "bundeslandName": "Hessen",
+      "population": 164792,
+      "plzRange": "64283–64297",
+      "lat": 49.8728,
+      "lon": 8.6512,
+      "optimalTiltDeg": 35,
+      "globalRadiationKwhM2": 1145,
+      "specificYieldKwhKwp": 1045,
+      "sunHoursPerYear": 1755,
+      "avgCostPerKwpEur": 1310,
+      "localElectricityPriceCt": 37.2,
+      "turnkey10kWpWithStorageEur": 18600,
+      "amortisationYears": 8.3,
+      "twentyYearNetProfitEur": 26500,
+      "twentyYearGridLossWithoutPvEur": 43600,
+      "solarmetrikScore": 93,
+      "localGridOperator": "e-netz Südhessen AG (ENTEGA)",
+      "kommunaleFoerderung2026": {
+        "programName": "Darmstädter Förderprogramm Photovoltaik & Gründach + ENTEGA-Ökobonus",
+        "status": "Aktiv (Direktzuschüsse für PV-Sonderlösungen, Dachbegrünung & Speicher)",
+        "details": "Südhessen an der Bergstraße gehört mit 1.045 kWh/kWp zu den Top-Ertragsregionen für Solarenergie in Deutschland."
+      }
+    },
+    {
+      "slug": "koblenz",
+      "name": "Koblenz",
+      "bundeslandSlug": "rheinland-pfalz",
+      "bundeslandName": "Rheinland-Pfalz",
+      "population": 115298,
+      "plzRange": "56068–56077",
+      "lat": 50.3569,
+      "lon": 7.589,
+      "optimalTiltDeg": 35,
+      "globalRadiationKwhM2": 1115,
+      "specificYieldKwhKwp": 1015,
+      "sunHoursPerYear": 1695,
+      "avgCostPerKwpEur": 1280,
+      "localElectricityPriceCt": 37.1,
+      "turnkey10kWpWithStorageEur": 18150,
+      "amortisationYears": 8.5,
+      "twentyYearNetProfitEur": 25300,
+      "twentyYearGridLossWithoutPvEur": 43500,
+      "solarmetrikScore": 91,
+      "localGridOperator": "Energienetze Mittelrhein GmbH & Co. KG (evm)",
+      "kommunaleFoerderung2026": {
+        "programName": "Koblenzer KIPKI-Förderprogramm Klimaschutz",
+        "status": "Aktiv (Zuschüsse über KIPKI-Kommunalbudget & evm-Sonnenpaket)",
+        "details": "Koblenz nutzt die Landesmittel aus dem KIPKI-Programm zur gezielten Förderung privater Energiewende-Maßnahmen."
+      }
+    },
+    {
+      "slug": "trier",
+      "name": "Trier",
+      "bundeslandSlug": "rheinland-pfalz",
+      "bundeslandName": "Rheinland-Pfalz",
+      "population": 112737,
+      "plzRange": "54290–54296",
+      "lat": 49.7499,
+      "lon": 6.6371,
+      "optimalTiltDeg": 35,
+      "globalRadiationKwhM2": 1135,
+      "specificYieldKwhKwp": 1030,
+      "sunHoursPerYear": 1730,
+      "avgCostPerKwpEur": 1285,
+      "localElectricityPriceCt": 37.2,
+      "turnkey10kWpWithStorageEur": 18250,
+      "amortisationYears": 8.4,
+      "twentyYearNetProfitEur": 25800,
+      "twentyYearGridLossWithoutPvEur": 43600,
+      "solarmetrikScore": 92,
+      "localGridOperator": "SWT Stadtwerke Trier Versorgungs-GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Trierer KIPKI-Solarförderung & SWT-Virtuelles-Kraftwerk-Bonus",
+        "status": "Aktiv (SWT Trier als bundesweiter Vorreiter für Smart-Grid-Speicher)",
+        "details": "Die Stadtwerke Trier (SWT) bieten besonders innovative Tarifmodelle für vernetzte PV-Heimspeicher im Moseltal."
+      }
+    },
+    {
+      "slug": "schwerin",
+      "name": "Schwerin",
+      "bundeslandSlug": "mecklenburg-vorpommern",
+      "bundeslandName": "Mecklenburg-Vorpommern",
+      "population": 98733,
+      "plzRange": "19053–19063",
+      "lat": 53.6355,
+      "lon": 11.4012,
+      "optimalTiltDeg": 38,
+      "globalRadiationKwhM2": 1055,
+      "specificYieldKwhKwp": 965,
+      "sunHoursPerYear": 1690,
+      "avgCostPerKwpEur": 1245,
+      "localElectricityPriceCt": 38.4,
+      "turnkey10kWpWithStorageEur": 17650,
+      "amortisationYears": 8.6,
+      "twentyYearNetProfitEur": 24200,
+      "twentyYearGridLossWithoutPvEur": 45100,
+      "solarmetrikScore": 89,
+      "localGridOperator": "NGS Netzgesellschaft Schwerin mbH (Stadtwerke Schwerin)",
+      "kommunaleFoerderung2026": {
+        "programName": "Klimaschutz-Förderung Landeshauptstadt Schwerin & LFI MV",
+        "status": "Aktiv (Hohe Netzstrom-Ersparnis 38,4 ct/kWh + 0 % MwSt)",
+        "details": "In der Landeshauptstadt Schwerin amortisieren sich PV-Anlagen dank günstiger Montagekosten (~1.245 €/kWp) in nur 8,6 Jahren."
+      }
+    },
+    {
+      "slug": "oldenburg",
+      "name": "Oldenburg",
+      "bundeslandSlug": "niedersachsen",
+      "bundeslandName": "Niedersachsen",
+      "population": 174629,
+      "plzRange": "26121–26135",
+      "lat": 53.1435,
+      "lon": 8.2146,
+      "optimalTiltDeg": 38,
+      "globalRadiationKwhM2": 1020,
+      "specificYieldKwhKwp": 935,
+      "sunHoursPerYear": 1575,
+      "avgCostPerKwpEur": 1255,
+      "localElectricityPriceCt": 36.8,
+      "turnkey10kWpWithStorageEur": 17800,
+      "amortisationYears": 9.1,
+      "twentyYearNetProfitEur": 22100,
+      "twentyYearGridLossWithoutPvEur": 43100,
+      "solarmetrikScore": 86,
+      "localGridOperator": "EWE NETZ GmbH",
+      "kommunaleFoerderung2026": {
+        "programName": "Oldenburger Förderprogramm Klimaschutz & EWE Solar-Kombi",
+        "status": "Aktiv (Zuschüsse für Dachbegrünung + PV sowie Altbausanierung)",
+        "details": "Oldenburg unterstützt als 'Energiestadt' des Nordwestens die Kombination aus Wärmepumpe, Photovoltaik und Gründach."
+      }
+    },
+    {
+      "slug": "heilbronn",
+      "name": "Heilbronn",
+      "bundeslandSlug": "baden-wuerttemberg",
+      "bundeslandName": "Baden-Württemberg",
+      "population": 130093,
+      "plzRange": "74072–74081",
+      "lat": 49.1427,
+      "lon": 9.2109,
+      "optimalTiltDeg": 34,
+      "globalRadiationKwhM2": 1180,
+      "specificYieldKwhKwp": 1080,
+      "sunHoursPerYear": 1805,
+      "avgCostPerKwpEur": 1310,
+      "localElectricityPriceCt": 37.1,
+      "turnkey10kWpWithStorageEur": 18600,
+      "amortisationYears": 8.2,
+      "twentyYearNetProfitEur": 27700,
+      "twentyYearGridLossWithoutPvEur": 43500,
+      "solarmetrikScore": 95,
+      "localGridOperator": "ZEAG Netz GmbH (Heilbronner Versorgungs GmbH)",
+      "kommunaleFoerderung2026": {
+        "programName": "Heilbronner Förderprogramm 'Klima-fittes Bauen und Sanieren'",
+        "status": "Aktiv (Direktzuschüsse der Stadt Heilbronn + L-Bank Darlehen)",
+        "details": "Die Weinbauregion Heilbronn bietet exzellente Sonneneinstrahlung (1.180 kWh/m²) und ein aktives kommunales Klimaschutzprogramm."
+      }
+    }
+  ]
+}
