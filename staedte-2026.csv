@@ -1,0 +1,52 @@
+stadt,bundesland,plz_bereich,lat,lon,globalstrahlung_kwh_m2,spezifischer_ertrag_kwh_kwp,sonnenstunden_jahr,optimaler_dachwinkel_grad,kosten_pro_kwp_eur,komplettpreis_10kwp_speicher_eur,lokaler_strompreis_ct_kwh,amortisation_jahre,20_jahre_nettovorteil_eur,sme_2026_score,netzbetreiber,url
+"München","Bayern","80331–81929",48.1351,11.582,1205,1110,1855,34,1365,19350,37.5,8.1,28900,96,"SWM Infrastruktur GmbH & Co. KG (Stadtwerke München)",https://solarmetrik.de/solaratlas/bayern/muenchen
+"Nürnberg","Bayern","90402–90491",49.4521,11.0767,1155,1060,1765,35,1305,18550,36.8,8.4,26700,93,"N-ERGIE Netz GmbH",https://solarmetrik.de/solaratlas/bayern/nuernberg
+"Augsburg","Bayern","86150–86199",48.3705,10.8978,1195,1095,1830,34,1315,18700,36.9,8.2,27900,95,"swa Netze GmbH (Stadtwerke Augsburg)",https://solarmetrik.de/solaratlas/bayern/augsburg
+"Regensburg","Bayern","93047–93059",49.0134,12.1016,1170,1075,1790,34,1300,18500,36.6,8.3,27100,94,"REWAG (Regensburger Energie- und Wasserversorgung) / Netzgesellschaft",https://solarmetrik.de/solaratlas/bayern/regensburg
+"Würzburg","Bayern","97070–97084",49.7913,9.9534,1160,1065,1775,35,1295,18400,36.7,8.3,26950,94,"Mainfranken Netze GmbH (WVV)",https://solarmetrik.de/solaratlas/bayern/wuerzburg
+"Stuttgart","Baden-Württemberg","70173–70619",48.7758,9.1829,1180,1080,1805,34,1340,19000,37.4,8.3,27600,95,"Stuttgarter Netze Betrieb GmbH",https://solarmetrik.de/solaratlas/baden-wuerttemberg/stuttgart
+"Freiburg im Breisgau","Baden-Württemberg","79098–79117",47.999,7.8421,1230,1135,1910,33,1330,18900,37.3,7.8,30200,98,"bnNETZE GmbH (badenova)",https://solarmetrik.de/solaratlas/baden-wuerttemberg/freiburg-im-breisgau
+"Karlsruhe","Baden-Württemberg","76131–76229",49.0069,8.4037,1195,1095,1845,34,1315,18650,37.1,8.1,28300,96,"Stadtwerke Karlsruhe Netzservice GmbH",https://solarmetrik.de/solaratlas/baden-wuerttemberg/karlsruhe
+"Mannheim","Baden-Württemberg","68159–68309",49.4875,8.466,1165,1065,1785,34,1305,18550,37.2,8.3,27100,94,"MVV Netze GmbH",https://solarmetrik.de/solaratlas/baden-wuerttemberg/mannheim
+"Heidelberg","Baden-Württemberg","69115–69126",49.3988,8.6724,1165,1065,1780,34,1325,18800,37.4,8.4,26900,94,"Stadtwerke Heidelberg Netze GmbH",https://solarmetrik.de/solaratlas/baden-wuerttemberg/heidelberg
+"Ulm","Baden-Württemberg","89073–89081",48.4011,9.9876,1185,1085,1810,34,1300,18450,36.9,8.2,27800,95,"SWU Netze GmbH (Stadtwerke Ulm/Neu-Ulm)",https://solarmetrik.de/solaratlas/baden-wuerttemberg/ulm
+"Berlin","Berlin","10115–14199",52.52,13.405,1065,965,1690,37,1350,19100,38.4,8.6,24800,91,"Stromnetz Berlin GmbH",https://solarmetrik.de/solaratlas/berlin/berlin-stadt
+"Hamburg","Hamburg","20095–22769",53.5511,9.9937,1020,930,1580,38,1360,19200,38.1,9.5,21900,85,"Hamburger Energienetze GmbH",https://solarmetrik.de/solaratlas/hamburg/hamburg-stadt
+"Köln","Nordrhein-Westfalen","50667–51149",50.9375,6.9603,1075,980,1630,36,1295,18350,37.8,8.6,24600,90,"RheinNetz GmbH (RNG / RheinEnergie)",https://solarmetrik.de/solaratlas/nordrhein-westfalen/koeln
+"Düsseldorf","Nordrhein-Westfalen","40210–40629",51.2277,6.7735,1065,970,1620,36,1290,18300,37.6,8.4,25800,92,"Netzgesellschaft Düsseldorf mbH (Stadtwerke Düsseldorf)",https://solarmetrik.de/solaratlas/nordrhein-westfalen/duesseldorf
+"Dortmund","Nordrhein-Westfalen","44135–44388",51.5136,7.4653,1055,960,1605,36,1265,17950,37.5,8.7,23900,89,"Dortmunder Netz GmbH (DO-NETZ / DEW21)",https://solarmetrik.de/solaratlas/nordrhein-westfalen/dortmund
+"Essen","Nordrhein-Westfalen","45127–45359",51.4556,7.0116,1055,960,1605,36,1260,17900,37.4,8.7,23800,89,"Westnetz GmbH (Region Essen)",https://solarmetrik.de/solaratlas/nordrhein-westfalen/essen
+"Bonn","Nordrhein-Westfalen","53111–53229",50.7374,7.0982,1085,990,1650,35,1285,18250,37.5,8.5,25100,91,"Bonn-Netz GmbH (SWB Energie und Wasser)",https://solarmetrik.de/solaratlas/nordrhein-westfalen/bonn
+"Münster","Nordrhein-Westfalen","48143–48167",51.9607,7.6261,1050,955,1600,36,1270,18000,37.2,8.8,23600,89,"Stadtnetze Münster GmbH",https://solarmetrik.de/solaratlas/nordrhein-westfalen/muenster
+"Frankfurt am Main","Hessen","60306–65936",50.1109,8.6821,1125,1025,1715,35,1320,18750,37.3,8,27900,95,"Netzdienste Rhein-Main GmbH (NRM / Mainova)",https://solarmetrik.de/solaratlas/hessen/frankfurt-am-main
+"Wiesbaden","Hessen","65183–65207",50.0782,8.2398,1125,1025,1710,35,1310,18600,37.1,8.5,25600,92,"ESWE Versorgungs AG / Netz",https://solarmetrik.de/solaratlas/hessen/wiesbaden
+"Kassel","Hessen","34117–34134",51.3127,9.4797,1065,970,1615,36,1275,18100,36.8,8.8,23700,89,"Städtische Werke Netz + Service GmbH (Kassel)",https://solarmetrik.de/solaratlas/hessen/kassel
+"Hannover","Niedersachsen","30159–30659",52.3759,9.732,1045,955,1610,37,1270,18050,37.1,8.9,23300,88,"enercity Netz GmbH",https://solarmetrik.de/solaratlas/niedersachsen/hannover
+"Braunschweig","Niedersachsen","38100–38126",52.2689,10.5268,1050,960,1620,37,1260,17900,36.9,8.9,23400,88,"Braunschweiger Netz GmbH (BS|NETZ)",https://solarmetrik.de/solaratlas/niedersachsen/braunschweig
+"Osnabrück","Niedersachsen","49074–49090",52.2799,8.0472,1040,950,1595,37,1255,17800,36.7,9,22900,87,"SWO Netz GmbH (Stadtwerke Osnabrück)",https://solarmetrik.de/solaratlas/niedersachsen/osnabrueck
+"Leipzig","Sachsen","04103–04357",51.3397,12.3731,1090,990,1700,36,1235,17550,37.4,8.4,24900,91,"Netz Leipzig GmbH (Leipziger Stadtwerke)",https://solarmetrik.de/solaratlas/sachsen/leipzig
+"Dresden","Sachsen","01067–01328",51.0504,13.7373,1100,1000,1715,36,1240,17600,37.3,8.4,25200,91,"SachsenNetze GmbH (SachsenEnergie)",https://solarmetrik.de/solaratlas/sachsen/dresden
+"Mainz","Rheinland-Pfalz","55116–55131",49.9929,8.2473,1140,1040,1745,35,1290,18300,37.2,8.3,26300,93,"Mainzer Netze GmbH",https://solarmetrik.de/solaratlas/rheinland-pfalz/mainz
+"Bremen","Bremen","28195–28779",53.0793,8.8017,1015,925,1560,38,1290,18200,37.1,9.4,21200,83,"wesernetz Bremen GmbH",https://solarmetrik.de/solaratlas/bremen/bremen-stadt
+"Kiel","Schleswig-Holstein","24103–24159",54.3233,10.1228,1035,950,1660,38,1280,18100,38.5,8.8,23400,87,"Stromnetz Kiel GmbH (Stadtwerke Kiel)",https://solarmetrik.de/solaratlas/schleswig-holstein/kiel
+"Rostock","Mecklenburg-Vorpommern","18055–18147",54.0924,12.0991,1080,990,1790,38,1240,17600,38.6,8.4,25100,90,"Stadtwerke Rostock Netzgesellschaft mbH",https://solarmetrik.de/solaratlas/mecklenburg-vorpommern/rostock
+"Potsdam","Brandenburg","14467–14482",52.3906,13.0645,1075,975,1710,37,1275,18050,38,8.7,24100,89,"Netzgesellschaft Potsdam GmbH (NGP / EWP)",https://solarmetrik.de/solaratlas/brandenburg/potsdam
+"Magdeburg","Sachsen-Anhalt","39104–39130",52.1205,11.6276,1075,975,1680,36,1225,17400,37.7,8.6,24200,89,"Städtische Werke Magdeburg GmbH & Co. KG (SWM Netze)",https://solarmetrik.de/solaratlas/sachsen-anhalt/magdeburg
+"Erfurt","Thüringen","99084–99099",50.9848,11.0299,1085,985,1675,36,1230,17500,37.5,8.5,24500,89,"SWE Netz GmbH (Stadtwerke Erfurt)",https://solarmetrik.de/solaratlas/thueringen/erfurt
+"Saarbrücken","Saarland","66111–66133",49.2402,6.9969,1145,1040,1750,35,1295,18350,37.6,8.4,26100,92,"Stadtwerke Saarbrücken Netz AG",https://solarmetrik.de/solaratlas/saarland/saarbruecken
+"Duisburg","Nordrhein-Westfalen","47051–47279",51.4344,6.7623,1055,960,1605,36,1255,17800,37.4,8.6,24000,89,"Netze Duisburg GmbH (Stadtwerke Duisburg)",https://solarmetrik.de/solaratlas/nordrhein-westfalen/duisburg
+"Bochum","Nordrhein-Westfalen","44787–44894",51.4818,7.2162,1055,960,1605,36,1260,17900,37.5,8.7,23900,89,"Stadtwerke Bochum Netz GmbH",https://solarmetrik.de/solaratlas/nordrhein-westfalen/bochum
+"Wuppertal","Nordrhein-Westfalen","42103–42399",51.2562,7.1508,1050,955,1595,36,1265,17950,37.6,8.7,23700,88,"WSW Netz GmbH (Wuppertaler Stadtwerke)",https://solarmetrik.de/solaratlas/nordrhein-westfalen/wuppertal
+"Bielefeld","Nordrhein-Westfalen","33602–33739",52.0302,8.5325,1045,950,1595,36,1260,17850,37.2,8.8,23400,88,"SWB Netz GmbH (Stadtwerke Bielefeld)",https://solarmetrik.de/solaratlas/nordrhein-westfalen/bielefeld
+"Aachen","Nordrhein-Westfalen","52062–52080",50.7753,6.0839,1075,980,1640,35,1280,18150,37.6,8.5,24900,91,"Regionetz GmbH (STAWAG Aachen)",https://solarmetrik.de/solaratlas/nordrhein-westfalen/aachen
+"Mönchengladbach","Nordrhein-Westfalen","41061–41239",51.1805,6.4428,1065,970,1620,36,1265,17950,37.3,8.6,24300,90,"NEW Netz GmbH",https://solarmetrik.de/solaratlas/nordrhein-westfalen/moenchengladbach
+"Gelsenkirchen","Nordrhein-Westfalen","45879–45899",51.5177,7.0857,1055,960,1605,36,1250,17750,37.4,8.6,24100,89,"ELE Verteilnetz GmbH (EVNG / Emscher Lippe Energie)",https://solarmetrik.de/solaratlas/nordrhein-westfalen/gelsenkirchen
+"Chemnitz","Sachsen","09111–09247",50.8278,12.9214,1095,995,1705,36,1230,17500,37.2,8.4,25000,91,"inetz GmbH (eins energie in sachsen)",https://solarmetrik.de/solaratlas/sachsen/chemnitz
+"Halle (Saale)","Sachsen-Anhalt","06108–06132",51.4828,11.9697,1085,985,1695,36,1225,17400,37.6,8.5,24600,90,"Energieversorgung Halle Netz GmbH (EVH / Stadtwerke Halle)",https://solarmetrik.de/solaratlas/sachsen-anhalt/halle-saale
+"Lübeck","Schleswig-Holstein","23552–23570",53.8655,10.6866,1045,955,1680,38,1275,18050,38.4,8.7,23700,88,"TraveNetz GmbH (Stadtwerke Lübeck)",https://solarmetrik.de/solaratlas/schleswig-holstein/luebeck
+"Darmstadt","Hessen","64283–64297",49.8728,8.6512,1145,1045,1755,35,1310,18600,37.2,8.3,26500,93,"e-netz Südhessen AG (ENTEGA)",https://solarmetrik.de/solaratlas/hessen/darmstadt
+"Koblenz","Rheinland-Pfalz","56068–56077",50.3569,7.589,1115,1015,1695,35,1280,18150,37.1,8.5,25300,91,"Energienetze Mittelrhein GmbH & Co. KG (evm)",https://solarmetrik.de/solaratlas/rheinland-pfalz/koblenz
+"Trier","Rheinland-Pfalz","54290–54296",49.7499,6.6371,1135,1030,1730,35,1285,18250,37.2,8.4,25800,92,"SWT Stadtwerke Trier Versorgungs-GmbH",https://solarmetrik.de/solaratlas/rheinland-pfalz/trier
+"Schwerin","Mecklenburg-Vorpommern","19053–19063",53.6355,11.4012,1055,965,1690,38,1245,17650,38.4,8.6,24200,89,"NGS Netzgesellschaft Schwerin mbH (Stadtwerke Schwerin)",https://solarmetrik.de/solaratlas/mecklenburg-vorpommern/schwerin
+"Oldenburg","Niedersachsen","26121–26135",53.1435,8.2146,1020,935,1575,38,1255,17800,36.8,9.1,22100,86,"EWE NETZ GmbH",https://solarmetrik.de/solaratlas/niedersachsen/oldenburg
+"Heilbronn","Baden-Württemberg","74072–74081",49.1427,9.2109,1180,1080,1805,34,1310,18600,37.1,8.2,27700,95,"ZEAG Netz GmbH (Heilbronner Versorgungs GmbH)",https://solarmetrik.de/solaratlas/baden-wuerttemberg/heilbronn
