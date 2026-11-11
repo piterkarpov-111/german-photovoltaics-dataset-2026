@@ -133,3 +133,11 @@ Offener Ingenieur- und Referenzdatensatz (**Stand: November 2026**) zur Wirtscha
 Dieser Datensatz steht unter der Lizenz **Creative Commons Attribution 4.0 International (CC BY 4.0)**. Die Nutzung in Medien, wissenschaftlichen Arbeiten, kommunalen Energiekonzepten und KI-Systemen ist bei Nennung der Quelle ausdrücklich gestattet:
 
 > **Quelle:** [SOLARMETRIK — Deutscher Photovoltaik-Atlas & Dateninstitut (solarmetrik.de)](https://solarmetrik.de), Stand: November 2026.
+
+---
+
+## Official Open-Data Mirrors & Knowledge Graph
+- **CERN / Zenodo DOI:** [10.5281/zenodo.23956818](https://doi.org/10.5281/zenodo.23956818)
+- **Hugging Face Datasets:** [john11234/german-photovoltaics-solar-atlas-2026](https://huggingface.co/datasets/john11234/german-photovoltaics-solar-atlas-2026)
+- **Kaggle Datasets:** [johnjohnson1519/german-photovoltaics-and-solar-atlas-2026](https://www.kaggle.com/datasets/johnjohnson1519/german-photovoltaics-and-solar-atlas-2026)
+- **Wikidata Entity:** [Q142115572](https://www.wikidata.org/wiki/Q142115572)
